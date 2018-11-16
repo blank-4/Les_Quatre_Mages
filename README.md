@@ -2,7 +2,7 @@
 
 ## How ?
 - You'll have to create a team of 3 developers.
-- Then tackle this assignment, and specify your teams : [https://classroom.github.com/g/cFIro3Nq](https://classroom.github.com/g/cFIro3Nq). 
+- Then tackle this assignment, and specify your teams : [https://classroom.github.com/g/OJdVoPaW](https://classroom.github.com/g/OJdVoPaW). 
 - Code and push regularly on GitHub.
 - __We will review the master branch on the last commit before the due dates.__
 
