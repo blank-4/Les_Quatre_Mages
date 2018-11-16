@@ -3,7 +3,7 @@
 ## How ?
 - You'll have to create a team of 3 developers.
 - Then tackle this assignment, and specify your teams : [https://classroom.github.com/g/OJdVoPaW](https://classroom.github.com/g/OJdVoPaW). 
-- Code and push regularly on GitHub.
+- Code and push regularly on GitHub on your team's repository.
 - __We will review the master branch on the last commit before the due dates.__
 
 ## Due dates
