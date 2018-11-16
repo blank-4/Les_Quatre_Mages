@@ -11,7 +11,7 @@
 - The code and documentation in their final versions have to be delivered _BEFORE_ __Friday 7th, June 2019, 23:59__.
 
 ## Purpose
-This assigment has been created to test all the knowledge and competencies you acquired during _blank. Thus, you'll have to create a web app from scratch following the given specs.
+This assigment has been created to test all the knowledge and skills you acquired during _blank. Thus, you'll have to create a web app from scratch following the given specs.
 Improving your project beyond instructions will be greatly appreciated and rewarded with Bonus Points (complex features, improved UI/UX, hosting, etc.).
 
 ## Oral exam
