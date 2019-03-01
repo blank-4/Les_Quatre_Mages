@@ -25,7 +25,8 @@ class UserController {
             console.log(bcrypt.compareSync(req.body.password, newUser.password));
         }
         newUser.save().then(() => {
-            res.render('register', { errormsg: "Inscription validée !" }) }).catch(() => { res.render('register', { errormsg: "Échec d'inscription." }) })
+            res.redirect('index').catch(() => { res.render('register', { errormsg: "Échec d'inscription." }) })
+        });
     }
     async list(req, res) {
         try {
