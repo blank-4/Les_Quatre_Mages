@@ -31,3 +31,19 @@ block content
                     img(src="images/cross.png", alt="Bouton fermer")
             div(class="divContent")
     div(class="desktopContent")
+        h2 Bienvenue
+        div(class="desktopRules rules-scale-in-center")
+            h3 Règles du jeu
+            p Retrouve tous les mots de la liste dans la grille.
+            p Ils peuvent être mêlés horizontalement, verticalement, en diagonale et écrits aussi bien à l'endroit qu'à l'envers.
+            p Une même lettre peut être utilisée dans plusieurs mots à la fois.
+            p Quand tu as repéré un mot, sélectionne la première lettre, reste selectionné jusqu'à la dernière lettre puis relâche la sélection.
+            p Le mot trouvé reste surligné et apparait barré dans la liste des mots à trouver.
+        a(href="#", @click="")
+            img(src="images/light_theme/l_mwjouer.png", alt="Bouton jouer")
+        div(id="desktopOption", class="desktopOption")
+            div(class="divHeader")
+                h3 Option
+                button(class="closeButton", @click="closeDesktopOption()")
+                    img(src="images/cross.png", alt="Bouton fermer")
+            div(class="divContent")

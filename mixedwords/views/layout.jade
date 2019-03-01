@@ -12,8 +12,16 @@ html
   body
     header
     nav
+      a(href="/index")
+        img(class="navLogo", src="images/light_theme/l_mwlogo.png", alt="Logo du site")
+      h1 MixedWords
+      div
+        a(href="", @click="") Inscription
+        a(href="", @click="") Connexion
     main(id="app")
       block content
+      button(class="optionHome", @click="desktopOption()")
+        img(src="images/gearing.png", alt="Bouton option desktop")
     img(value="1", class="mwLogo", src="images/light_theme/l_mwlogo.png", alt="Logo du site")
     img(value="1", class="sunmoon sunmoonFloating", src="images/light_theme/sun.png", alt="Image d'un soleil")
     img(value="1", class="cloud1 cloud1Floating", src="images/cloud.png", alt="Image d'un nuage")
@@ -21,8 +29,8 @@ html
     img(value="1", class="cloud3 cloud3Floating", src="images/cloud.png", alt="Image d'un nuage")
     img(value="2", class="wave1animation", src="images/light_theme/l_mwwave1.png", alt="Image d'une vague")
     img(value="3", class="wave2animation", src="images/light_theme/l_mwwave2.png", alt="Image d'une vague")
-    a(class="returnHome" href="/index")
-        img(src="images/home.png", alt="Retour à l'accueil")
+    a(class="returnHome", href="/index")
+      img(src="images/home.png", alt="Retour à l'accueil")
     footer
       p &copy Tous droits réservés.
     script(src="javascripts/script.js")

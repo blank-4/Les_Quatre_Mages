@@ -20,6 +20,15 @@ var vue = new Vue ({
         },
         hideRules: () => {
             closeRules();
+        },
+        desktopOption: () => {
+            optionDesktop();
+        },
+        desktopOption: () => {
+            optionDesktop();
+        },
+        closeDesktopOption: () => {
+            closeOptionDesktop();
         }
     }
 })
@@ -28,6 +37,7 @@ var vue = new Vue ({
 const playButton = document.getElementById("playModal");
 const optionButton = document.getElementById("optionModal");
 const gameRules = document.getElementById("gameRules");
+const desktopOption = document.getElementById("desktopOption");
 /* --------------------------------------------- FUNCTIONS --------------------------------------------- */
 /* ------------------------------------------ DOM MANIPULATION ----------------------------------------- */
 function openPlay() {
@@ -50,4 +60,13 @@ function closeOption() {
 }
 function closeRules() {
     gameRules.classList.toggle('scale-out-center-rules');
+}
+function optionDesktop() {
+    desktopOption.style.display = "flex";
+    desktopOption.classList.remove('desktop-scale-out-center');
+    desktopOption.classList.toggle('desktop-scale-in-center');
+}
+function closeOptionDesktop() {
+    desktopOption.classList.toggle('desktop-scale-out-center');
+    desktopOption.classList.remove('desktop-scale-in-center');
 }

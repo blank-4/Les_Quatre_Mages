@@ -102,6 +102,25 @@ button > img {
     width: 50%;
     height: 50%;
 }
+/* ----------------------------------------------- STYLE ----------------------------------------------- */
+/* -------------------------------------------- OPTION BUTTON ------------------------------------------ */
+.optionHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    position: fixed;
+    bottom: 0.2em;
+    right: calc(0.2em + 48px);
+    background-color: rgba(0, 0, 0, 0.6);
+    border: solid 4px #ffa230;
+    border-radius: 40px;
+}
+.optionHome > img {
+    width: 60%;
+    height: 60%;
+}
 /* ----------------------------------------------- IMAGES ---------------------------------------------- */
 /* ------------------------------------ LOGO & NUAGES & SOLEIL & LUNE ---------------------------------- */
 .mwLogo, .sunmoon, .cloud1, .cloud2, .cloud3 {

@@ -5,7 +5,7 @@
     .desktopContent {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         width: 100%;
         height: 100%;
@@ -35,26 +35,120 @@
         left: 0;
         z-index: -2;
     }
+    header {
+        display: none;
+    }
     nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
         height: 10%;
         background-color: #ffa230;
         box-shadow: 0 0 20px -4px black;
     }
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 80%;
+    }
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+    }
     /* ----------------------------------------------- IMAGES ---------------------------------------------- */
     /* ----------------------------------------------- TROPHY ---------------------------------------------- */
     /* --------------------------------------------- HOME PAGE --------------------------------------------- */
-    /* ------------------------------------------- PLAY & OPTION ------------------------------------------- */
+    /* ------------------------------------------ LAYOUT & RULES  ------------------------------------------ */
+    nav > a {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 20%;
+        height: 100%;
+    }
+    nav > h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        height: 100%;
+    }
+    nav > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 20%;
+        height: 100%;
+    }
+    nav > a > img {
+        width: 60px;
+        height: 60px;
+        margin-left: 2em;
+    }
+    nav > div > a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        transition: all 0.5s ease-in-out;
+    }
+    nav > div > a:hover {
+        color: #ffa230;
+        background-color: white;
+    }
+    .desktopContent > .desktopRules {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 50%;
+        height: 50%;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 20px;
+        box-shadow: 0 0 20px -4px black;
+    }
+    .desktopContent > a {
+        width: 160px;
+        height: 100px;
+    }
+    .desktopContent > a > img {
+        width: 100%;
+        height: 100%;
+    }
     /* --------------------------------------------- HOME PAGE --------------------------------------------- */
     /* ---------------------------------------------- MODALS ----------------------------------------------- */
+    #desktopOption {
+        display: none;
+    }
+    .desktopOption > .divHeader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 20%;
+        border-bottom: 1px solid #ffa230;
+    }
+    .divHeader > .closeButton {
+        position: fixed;
+        top: 1em;
+        right: 1em;
+    }
     /* -------------------------------------------- LEADERBOARD -------------------------------------------- */
     /* -------------------------------------------- SCORE'S DIV -------------------------------------------- */
     /* ---------------------------------------------- REGISTER --------------------------------------------- */
     /* -------------------------------------------- REGISTER'S DIV ----------------------------------------- */
     /* --------------------------------------------- GAMECONFIG -------------------------------------------- */
     /* -------------------------------------------- CONFIG'S DIV ------------------------------------------- */
-    /* ------------------------------------------------ GAME ----------------------------------------------- */
-    /* -------------------------------------------- GAME'S RULES ------------------------------------------- */
     /* ------------------------------------------------ GAME ----------------------------------------------- */
     /* ------------------------------------------ GAME'S EASY GRID ----------------------------------------- */
     /* ---------------------------------------------- PROFILE ---------------------------------------------- */
