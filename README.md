@@ -33,20 +33,20 @@ Create a web app mimicking the concept of : "Word Search" or "Mots Mêlés" in f
 
 ### Functionalities
 - __The user arrives on a landing page explaining the game. This page contains:__
-  - A button leading to the game page
-  - A button leading to the scores page
-  - A button allowing user to login on the login page
-  - A button allowing user to signup on the signup page
+  - A button leading to the game page ( Done )
+  - A button leading to the scores page ( Done )
+  - A button allowing user to login on the login page ( Done )
+  - A button allowing user to signup on the signup page ( Done )
   - If the user is connected :
     - A button linking to its profile on the profile page
     - A button linking to its scores
     - A button allowing user to logout
 - __The game page displays :__
-  - A grid containing letters scrambled
-  - A dedicated area displaying words (you'll have to imagine a mechanism to show which words have been found)
+  - A grid containing letters scrambled ( Done )
+  - A dedicated area displaying words (you'll have to imagine a mechanism to show which words have been found) ( Done )
   - A place displaying current score
   - A place displaying the 3 best scores in this difficulty
-  - A button to go back to landing page
+  - A button to go back to landing page ( Done )
   - If the user is connected :
     - A button linking to its profile
     - A button linking to its scores
@@ -60,17 +60,17 @@ Create a web app mimicking the concept of : "Word Search" or "Mots Mêlés" in f
     - Highlight its scores
   - Bonus points will be awarded for sorting, filtering, pagination, etc.
 - __The login page displays :__
-  - A field to enter username
-  - A field to enter password
-  - A button to login
-  - A button to signup on the signup page
-  - If the login is successful you will have to redirect the user on the front page or game page
+  - A field to enter username ( Done )
+  - A field to enter password ( Done )
+  - A button to login ( Done )
+  - A button to signup on the signup page ( Done )
+  - If the login is successful you will have to redirect the user on the front page or game page ( Done )
   - Upon login failure, adequate feedback is expected (error message, alert, ...)
 - __The signup page displays :__
-  - All information you need on the users as form fields (at least username and password)
-  - A button to signup
-  - If the signup is successful you will have to login the user redirect it on the front page or game page
-  - Upon signup failure, adequate feedback is expected (error message, alert, ...)
+  - All information you need on the users as form fields (at least username and password) ( Done )
+  - A button to signup ( Done )
+  - If the signup is successful you will have to login the user redirect it on the front page or game page ( Done )
+  - Upon signup failure, adequate feedback is expected (error message, alert, ...) ( Done )
 - __The profile page displays :__
   - All information you have on the user as form fields (disabled if you do not want the user to edit those)
   - A button to edit information
@@ -78,16 +78,16 @@ Create a web app mimicking the concept of : "Word Search" or "Mots Mêlés" in f
   - Upon edit failure, adequate feedback is expected (error message, alert, ...)
   - A button to cancel information and return on front page
 - __Difficulty :__
-  - Your game will have at least three levels of difficulty (Easy, Medium, Hard)
+  - Your game will have at least three levels of difficulty (Easy, Medium, Hard) ( Done )
   - Each level has to :
-    - Have a different grid scale
+    - Have a different grid scale ( Done )
     - Have a different score growing scale
 ### Front-end
 - **The Front-end has to communicate with the Back-end through REST API.**
 - **You will have to use a front-end framework embracing the MVVM application design (Vue, React, ...).**
 
 The Front-end will have to be : 
-- Responsive (usable on tablet, mobile, and desktop)
+- Responsive (usable on tablet, mobile, and desktop) ( Done )
 ### Back-end
 - **The Back-end has to communicate with the Front-end through REST API.**
 - **The Back-end has to use concepts like routing, MVC**
@@ -107,11 +107,11 @@ The Back-end has to :
 - **You will have to create an User Documentation explaning how the it can use your web app**
 ## Scoring scale (/20)
 ### Code & documentation (/5)
-- Code comments
+- Code comments ( Done )
 - Technical documentation (API & setup)
 - User documentation
-- Code conventions & organisation (indentation, variable and functions names, etc.)
-- Git & Github
+- Code conventions & organisation (indentation, variable and functions names, etc.) ( Done )
+- Git & Github ( Done )
 ### Functionnalities (/5)
 - Login, signup, logout, edit user
 - Can play the game
@@ -125,11 +125,11 @@ The Back-end has to :
 - Framework used
 - ORM used
 ### Front-End (/3)
-- Design (UI/UX)
+- Design (UI/UX) ( Done )
 - API calls
-- MVVM pattern
-- Framework used
-- Responsive
+- MVVM pattern ( Done )
+- Framework used ( Done )
+- Responsive ( Done )
 ### Presentation (/4)
 - Slides quality
 - Distribution of speaking time
