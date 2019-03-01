@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    div(class="homepageButtons")
+        button(class="heartbeat", @click="showPlay()")
+            img(src="images/light_theme/l_mwjouer.png", alt="Bouton jouer")
+        button(class="heartbeat", @click="showOption()")
+            img(src="images/light_theme/l_mwoption.png", alt="Bouton option")
+    a(class="mwScore", href="/leaderboard")
+        img(src="images/award.png", alt="Image d'un trophé")
+    div(id="playModal", class="playModal")
+        div(class="divHeader")
+            h3 Connexion
+            button(class="closeButton", @click="hidePlay()")
+                img(src="images/cross.png", alt="Bouton fermer")
+        div(class="divContent")
+            form(action="/gameconfig", method="POST")
+                label(for="username") Nom d'utilisateur
+                input(id="username", type="text", name="username", required)
+                label(for="password") Mot de passe
+                input(id="password", type="password", name="password", required)
+                button(type="submit", class="heartbeat")
+                    img(src="images/light_theme/l_mwvalider.png", alt="Bouton valider")
+            p Pas encore inscrit ? Rejoins-nous et 
+                a(href="/register") créer un compte !
+    div(id="optionModal", class="optionModal")
+        div(class="divHeader")
+            h3 Option
+            button(class="closeButton", @click="hideOption()")
+                img(src="images/cross.png", alt="Bouton fermer")
+        div(class="divContent")

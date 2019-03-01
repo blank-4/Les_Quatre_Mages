@@ -1,0 +1,146 @@
+.sunmoonFloating {
+    animation: floating1 3.8s ease-in-out infinite both;
+}
+.cloud1Floating {
+    animation: floating2 2.8s ease-in-out infinite both;
+}
+.cloud2Floating {
+    animation: floating3 2.4s ease-in-out infinite both;
+}
+.cloud3Floating {
+    animation: floating4 2s ease-in-out infinite both;
+}
+@keyframes floating1 {
+    0% { top: 1em; }
+    50% { top: 2em; }
+    100% { top: 1em; }
+}
+@keyframes floating2 {
+    0% { top: 3em; }
+    50% { top: 4em; }
+    100% { top: 3em; }
+}
+@keyframes floating3 {
+    0% { top: 14em; }
+    50% { top: 15em; }
+    100% { top: 14em; }
+}
+@keyframes floating4 {
+    0% { top: 24em; }
+    50% { top: 25em; }
+    100% { top: 24em; }
+}
+.heartbeat {
+	animation: heartbeat 1.5s ease-in-out infinite both;
+}
+@keyframes heartbeat {
+    from {
+        transform: scale(1);  
+        transform-origin: center center;
+        animation-timing-function: ease-out;
+    }
+    10% {
+        transform: scale(0.91);
+        animation-timing-function: ease-in;
+    }
+    17% {
+        transform: scale(0.98);
+        animation-timing-function: ease-out;
+    }
+    33% {
+        transform: scale(0.87);
+        animation-timing-function: ease-in;
+    }
+    45% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+}
+.scale-in-center {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 70%;
+    position: fixed;
+    background: url('/images/light_theme/l_mwbckg.png') no-repeat fixed;
+    background-size: cover;
+    border: 4px solid #ffa230;
+    border-radius: 20px;
+    box-shadow: 0 0 20px -4px black;
+    z-index: 10;
+    animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes scale-in-center {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.scale-out-center {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 70%;
+    position: fixed;
+    background: url('/images/light_theme/l_mwbckg.png') no-repeat fixed;
+    background-size: cover;
+    border: 4px solid #ffa230;
+    border-radius: 20px;
+    box-shadow: 0 0 20px -4px black;
+    z-index: 10;
+	animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+.scale-out-center-rules {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 20;
+	animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+@keyframes scale-out-center {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 1;
+    }
+}
+.neon {
+    animation: neon 1.5s ease-in-out infinite both;
+    /* animation: neon1 1.5s ease-in-out infinite alternate; */
+}
+@keyframes neon {
+    0% { background-color: rgb(190, 0, 0); }
+    25% { background-color: rgb(12, 12, 12); }
+    50% { background-color: rgb(190, 0, 0); }
+    100% { background-color: rgb(12, 12, 12); }
+} 
+.wave1animation {
+    animation: wave1 4s ease-in-out infinite both;
+}
+@keyframes wave1 {
+    0% { left: 0; }
+    25% { left: -4em; }
+    50% { left: 0; }
+    75% { left: -4em; }
+    100% { left: 0; }
+}
+.wave2animation {
+    animation: wave2 4s ease-in-out infinite both;
+}
+@keyframes wave2 {
+    0% { left: 0; }
+    25% { left: -2em; }
+    50% { left: 0; }
+    75% { left: -2em; }
+    100% { left: 0; }
+}

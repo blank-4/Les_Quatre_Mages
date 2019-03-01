@@ -1,0 +1,379 @@
+@media screen and (max-width: 500px) {
+    body > img[value="2"], img[value="3"] {
+        display: none;
+    }
+    header {
+        display: none;
+    }
+    nav {
+        display: none;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 90%;
+    }
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+    }
+    /* ----------------------------------------------- IMAGES ---------------------------------------------- */
+    /* ----------------------------------------------- TROPHY ---------------------------------------------- */
+    .mwScore {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        bottom: 6em;
+    }
+    .mwScore > img {
+        width: 100%;
+        height: 100%;
+    }
+    /* --------------------------------------------- HOME PAGE --------------------------------------------- */
+    /* ------------------------------------------- PLAY & OPTION ------------------------------------------- */
+    .homepageButtons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 300px;
+    }
+    .homepageButtons > button > img {
+        width: 100px;
+        height: 60px;
+    }
+    /* --------------------------------------------- HOME PAGE --------------------------------------------- */
+    /* ---------------------------------------------- MODALS ----------------------------------------------- */
+    #playModal {
+        display: none;
+    }
+    #optionModal {
+        display: none;
+    }
+    .playModal > .divHeader, .optionModal > .divHeader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 20%;
+        border-bottom: 1px solid #ffa230;
+    }
+    .divHeader > .closeButton {
+        position: fixed;
+        top: 1em;
+        right: 1em;
+    }
+    .playModal > .divContent, .optionModal > .divContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 80%;
+    }
+    .divContent > form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 80%;
+    }
+    .divContent > form > button > img {
+        width: 80px;
+        height: 40px;
+    }
+    .divContent > p {
+        margin: 1em 0;
+        padding: 0 2em;
+    }
+    .divContent > p > a {
+        color: #8360dd;
+    }
+    /* -------------------------------------------- LEADERBOARD -------------------------------------------- */
+    /* -------------------------------------------- SCORE'S DIV -------------------------------------------- */
+    .personalScore {
+        display: flex;
+        width: 90%;
+        height: 10%;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 4px solid #ffa230;
+        border-radius: 20px;
+        box-shadow: 0 0 20px -4px black;
+    }
+    .worldwideScore {
+        display: flex;
+        width: 90%;
+        height: 80%;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 4px solid #ffa230;
+        border-radius: 20px;
+        box-shadow: 0 0 20px -4px black;
+    }
+    /* ---------------------------------------------- REGISTER --------------------------------------------- */
+    /* -------------------------------------------- REGISTER'S DIV ----------------------------------------- */
+    .registerForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 90%;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 4px solid #ffa230;
+        border-radius: 20px;
+        box-shadow: 0 0 20px -4px black;
+    }
+    .registerForm > h2 {
+        margin: 1em auto;
+    }
+    .registerForm > form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 90%;
+    }
+    .registerForm > form > button > img {
+        width: 80px;
+        height: 40px;
+    }
+    .registerForm > .registrationErrors {
+        margin: 1em 0;
+        padding: 0 1em;
+    }
+    /* --------------------------------------------- GAMECONFIG -------------------------------------------- */
+    /* -------------------------------------------- CONFIG'S DIV ------------------------------------------- */
+    .configForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 90%;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 4px solid #ffa230;
+        border-radius: 20px;
+        box-shadow: 0 0 20px -4px black;
+    }
+    .configForm > h2, .configForm h4 {
+        margin: 0.5em auto;
+    }
+    .configForm > form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 90%;
+    }
+    .configForm > form > button > img {
+        width: 80px;
+        height: 40px;
+    }
+    .configForm > .configErrors {
+        margin: 1em 0;
+        padding: 0 1em;
+        color: red;
+    }
+    .difficultySelect {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 30%;
+    }
+    .difficultySelect > input {
+        display: none;
+    }
+    .difficultySelect > label {
+        width: 80px;
+        height: 40px;
+        margin: 0;
+    }
+    .difficultySelect > label > img {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+    .difficultySelect > input[type="radio"]:checked + label > img {
+        transform: scale(0.8);
+    }
+    /* ------------------------------------------------ GAME ----------------------------------------------- */
+    /* -------------------------------------------- GAME'S RULES ------------------------------------------- */
+    .gameRules {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 20;
+    }
+    .gameRules > .closeButton {
+        position: fixed;
+        top: 1em;
+        right: 1em;
+    }
+    .gameRules > p {
+        padding: 0 1em;
+    }
+    .gameRules > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    /* ------------------------------------------------ GAME ----------------------------------------------- */
+    /* ------------------------------------------ GAME'S EASY GRID ----------------------------------------- */
+    .easy {
+        display: flex;
+        width: 90%;
+        height: 50%;
+        background-color: white;
+        border: solid 4px #ffa230;
+        border-radius: 20px;
+        box-shadow: 0 0 20px -4px black;
+    }
+    .easy > .easycolumn {
+        flex: 1;
+    }
+    .easy > .easycolumn > .columnletter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 20%;
+        border-radius: 10px;
+        transition: all 0.5s ease-in-out;
+    }
+    .easy > .easycolumn > .columnletter:hover {
+        background-color: #ffa230;
+    }
+    .columnletter > p {
+        color: black;
+    }
+    .wordsContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 40%;
+        margin: 1em 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        border: solid 4px #ffa230;
+        border-radius: 20px;
+        box-shadow: 0 0 20px -4px black;
+    }
+    .wordsList {
+        display: flex;
+        width: 90%;
+        height: 50%;
+        margin: auto;
+        border: solid 4px #ffa230;
+        border-radius: 20px;
+    }
+    .wordsNav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        height: 30%;
+        margin: auto;
+    }
+    .wordsNav > button, .wordsNav > a:first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+    }
+    .wordsNav > button > img, .wordsNav > a:first-child > img {
+        width: 100%;
+        height: 100%;
+    }
+    .wordsNav > a:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 40px;
+    }
+    .wordsNav > a:nth-child(2) > img {
+        width: 100%;
+        height: 100%;
+    }
+    /* ---------------------------------------------- PROFILE ---------------------------------------------- */
+    /* ---------------------------------------------- LAYOUT ----------------------------------------------- */
+    .profileHeader {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        height: 20%;
+        margin: auto;
+    }
+    .profileContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 70%;
+        margin: auto;
+    }
+    .playerAvatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        height: 90%;
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 4px solid #ffa230;
+        border-radius: 20px;
+    }
+    .playerAvatar > img {
+        width: 50px;
+        height: 50px;
+    }
+    .playerName {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        height: 90%;
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 4px solid #ffa230;
+        border-radius: 20px;
+    }
+    .userEntries {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 96%;
+        height: 96%;
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 4px solid #ffa230;
+        border-radius: 20px;
+    }
+}

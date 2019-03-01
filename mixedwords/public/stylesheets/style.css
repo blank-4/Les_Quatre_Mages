@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Fredoka One';
+    background: url('/images/light_theme/l_mwbckg.png') no-repeat fixed;
+    background-size: cover;
+}
+h1 {
+    font-size: 1.9em;
+}
+h2 {
+    font-size: 1.8em;
+}
+h3 {
+    font-size: 1.7em;
+}
+h4 {
+    font-size: 1.6em;
+}
+a, p {
+    font-size: 1em;
+    text-decoration: none;
+}
+main > img {
+    width: 90%;
+    height: auto;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input, select {
+    font-family: 'Fredoka One';
+    color: black;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+input:hover, select:hover {
+    box-shadow: 0 0 2px 1px #ffa230;
+}
+option {
+    font-family: 'Fredoka One';
+    color: black;
+}
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+button > img {
+    width: 150px;
+    height: 100px;
+}
+/* ----------------------------------------------- STYLE ----------------------------------------------- */
+/* ------------------------------------------- CLOSE BUTTONS ------------------------------------------- */
+.closeButton {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 20px;
+    transition: all 0.5s ease-in-out;
+}
+.closeButton:hover {
+    transform: scale(1.1);
+}
+.closeButton > img {
+    width: 80%;
+    height: 80%;
+}
+/* ----------------------------------------------- STYLE ----------------------------------------------- */
+/* ----------------------------------------- RETURN HOME BUTTON ---------------------------------------- */
+.returnHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 0.2em;
+    right: 0.2em;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: solid 4px #ffa230;
+    border-radius: 40px;
+}
+.returnHome > img {
+    width: 50%;
+    height: 50%;
+}
+/* ----------------------------------------------- IMAGES ---------------------------------------------- */
+/* ------------------------------------ LOGO & NUAGES & SOLEIL & LUNE ---------------------------------- */
+.mwLogo, .sunmoon, .cloud1, .cloud2, .cloud3 {
+    position: fixed;
+    z-index: -10;
+}
+.mwLogo {
+    width: 100px;
+    height: 100px;
+    top: 1em;
+    right: calc(50% - 50px);
+}
+.sunmoon {
+    width: 100px;
+    height: 100px;
+    top: 1em;
+    left: 1em;
+}
+.cloud1 {
+    width: 150px;
+    height: 100px;
+    top: 3em;
+    right: -2em;
+}
+.cloud2 {
+    width: 150px;
+    height: 100px;
+    top: 14em;
+    left: -2em;
+}
+.cloud3 {
+    width: 150px;
+    height: 100px;
+    top: 24em;
+    right: -2em;
+}

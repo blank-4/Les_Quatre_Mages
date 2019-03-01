@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    div(class="configForm")
+        h2  Niveau
+        form(action="/game", method="POST")
+            h4 Difficulté
+            div(class="difficultySelect")
+                input(id="easy", type="radio", name="difficulty", value="easy")
+                label(for="easy")
+                    img(src="images/light_theme/l_mwfacile.png", alt="Difficulté facile")
+                input(id="medium", type="radio", name="difficulty", value="medium")
+                label(for="medium")
+                    img(src="images/light_theme/l_mwmoyen.png", alt="Difficulté moyenne")
+                input(id="hard", type="radio", name="difficulty", value="hard")
+                label(for="hard")
+                    img(src="images/light_theme/l_mwdifficile.png", alt="Difficulté difficile")
+                label(for="insane")
+                    img(src="images/insane_theme/i_mwdement.png", alt="Difficulté démente")
+            h4 Thème
+            div(class="topicSelect")
+                select(name="topic")
+                    option(value="sports") Sports
+                    option(value="cars") Voitures
+                    option(value="series") Séries
+                    option(value="history") Histoire
+            button(type="submit", class="heartbeat")
+                img(src="images/light_theme/l_mwvalider.png", alt="Bouton valider")
+        p(class="configErrors") #{errormsg}

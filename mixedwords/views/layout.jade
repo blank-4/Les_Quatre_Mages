@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= title
+    link(rel="stylesheet", href="stylesheets/style.css")
+    link(rel="stylesheet", href="stylesheets/light_theme/smartphone500.css")
+    link(rel="stylesheet", href="stylesheets/light_theme/desktop3840.css")
+    link(rel="stylesheet", href="stylesheets/animations.css")
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+  body
+    header
+    nav
+    main(id="app")
+      block content
+    img(value="1", class="mwLogo", src="images/light_theme/l_mwlogo.png", alt="Logo du site")
+    img(value="1", class="sunmoon sunmoonFloating", src="images/light_theme/sun.png", alt="Image d'un soleil")
+    img(value="1", class="cloud1 cloud1Floating", src="images/cloud.png", alt="Image d'un nuage")
+    img(value="1", class="cloud2 cloud2Floating", src="images/cloud.png", alt="Image d'un nuage")
+    img(value="1", class="cloud3 cloud3Floating", src="images/cloud.png", alt="Image d'un nuage")
+    img(value="2", class="wave1animation", src="images/light_theme/l_mwwave1.png", alt="Image d'une vague")
+    img(value="3", class="wave2animation", src="images/light_theme/l_mwwave2.png", alt="Image d'une vague")
+    a(class="returnHome" href="/index")
+        img(src="images/home.png", alt="Retour à l'accueil")
+    footer
+      p &copy Tous droits réservés.
+    script(src="javascripts/script.js")

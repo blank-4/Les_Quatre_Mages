@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    div(class="registerForm")
+        h2  Inscription
+        form(action="/register", method="POST")
+            label(for="username") Nom d'utilisateur
+            input(id="username", type="text", name="username", required)
+            label(for="email") Adresse email
+            input(id="email", type="email", name="email", required)
+            label(for="password") Mot de passe
+            input(id="password", type="password", name="password", required)
+            label(for="passwordConfirmation") Confirmation du mot de passe
+            input(id="passwordConfirmation", type="password", name="passwordConfirmation", required)
+            button(type="submit", class="heartbeat")
+                img(src="images/light_theme/l_mwvalider.png", alt="Bouton valider", required)
+        if errormsg != "Inscription validée !"
+            p(class="registrationErrors", style="color: red") #{errormsg}
+        else
+            p(class="registrationErrors", style="color: greenyellow") #{errormsg}
