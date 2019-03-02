@@ -3,8 +3,13 @@ var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var bcrypt = require('bcrypt');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var User = require('./models/UserModel');
+var session = require('express-session');
 
 var routes = require('./routes/index');
 
@@ -25,10 +30,51 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+app.use(require('express-session')({ 
+    secret: 'mixedwordssecret',
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+
+// Passport verifications
+passport.use('local', new LocalStrategy(function(username, password, done) {
+    User.findOne({ username: username }, function(err, user) {
+        if (err) {
+            return done(err);
+        }
+        if (!user) {
+            return done(null, false);
+        }
+        if (password != user.password) {
+            bcrypt.compare(password, user.password, function(err, res) {
+                if(res) {
+                    return done(null, user);
+                } else {
+                    return done(null, false)
+                }
+            })
+        }
+    });
+}));
+passport.serializeUser(function(user, done) {
+    done(null, user);
+});
+passport.deserializeUser(function(user, done) {
+    done(null, user);
+});
+app.post('/login', passport.authenticate('local', { failureRedirect: '/index' }), function(req, res) {
+    res.render('gameconfig');
+});
+app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/index');
+});
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

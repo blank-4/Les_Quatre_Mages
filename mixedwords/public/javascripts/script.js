@@ -6,27 +6,31 @@ var vue = new Vue ({
         }
     },
     methods: {
+        // Permet d'ouvrir une modal contenant un formulaire de connexion pour jouer ( mobile )
         showPlay: () => {
             openPlay();
         },
+        // Permet d'ouvrir une modal affichant certaines options possibles ( bonus ) ( mobile )
         showOption: () => {
             openOption();
         },
+        // Permet de fermer la modal de connexion ( mobile )
         hidePlay: () => {
             closePlay();
         },
+        // Permet de fermer la modal d'option ( mobile )
         hideOption: () => {
             closeOption();
         },
+        // Permet de fermer les règles qui s'affichent au début du jeu sur les grilles ( mobile )
         hideRules: () => {
             closeRules();
         },
+        // Permet d'ouvrir une modal affichant certaines otpions possibles ( bonus ) ( desktop )
         desktopOption: () => {
             optionDesktop();
         },
-        desktopOption: () => {
-            optionDesktop();
-        },
+        // Permet de fermer la modal d'option ( desktop )
         closeDesktopOption: () => {
             closeOptionDesktop();
         }
