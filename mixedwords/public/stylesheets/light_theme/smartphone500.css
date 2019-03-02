@@ -110,19 +110,6 @@
     .divContent > p > a {
         color: #8360dd;
     }
-    .divContent > img , label {
-        height: 50px;
-        width: 50px;
-        margin-top: 1%;
-    }
-    .imgTheme, label {
-        height: 50px;
-        width: 50px;
-        margin-bottom: 5%;
-    }
-    .imgTheme {
-        margin-top: 10%;
-    }  
     .switch {
         position: relative;
         display: inline-block;

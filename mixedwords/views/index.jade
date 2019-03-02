@@ -15,7 +15,7 @@ block content
                 button(class="closeButton", @click="hidePlay()")
                     img(src="images/cross.png", alt="Bouton fermer")
             div(class="divContent")
-                form(action="/gameconfig", method="POST")
+                form(action="/login", method="POST")
                     label(for="username") Nom d'utilisateur
                     input(id="username", type="text", name="username", required)
                     label(for="password") Mot de passe

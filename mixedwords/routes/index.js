@@ -4,15 +4,10 @@ var router = express.Router();
 // Requête GET sur la page d'accueil
 router.get('/', function(req, res) {
     res.render('index');
-    console.log(media500);
 });
 // Requête GET sur la page des scores ( click sur le trophé )
 router.get('/leaderboard', function(req, res) {
     res.render('leaderboard');
-});
-// Requête POST sur la page configuration du jeu ( validation du formulaire de connexion dans l'accueil )
-router.post('/gameconfig', function(req, res) {
-    res.render('gameconfig');
 });
 // Requête POST sur la page de jeu ( validation du formulaire de configuration du jeu dans gameconfig )
 router.post('/game', function(req, res) {
