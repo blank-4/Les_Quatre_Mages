@@ -71,10 +71,6 @@ passport.deserializeUser(function(user, done) {
 app.post('/login', passport.authenticate('local', { failureRedirect: '/index' }), function(req, res) {
     res.render('gameconfig');
 });
-app.get('/logout', function(req, res){
-    req.logout();
-    res.redirect('/index');
-});
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
