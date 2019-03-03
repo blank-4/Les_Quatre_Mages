@@ -1,11 +1,12 @@
 var User = require('../models/UserModel');
 var bcrypt = require('bcrypt');
+var chalk = require('chalk');
 
 class UserController {
     create(req, res) {
         var mailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if(req.body.username.length < 4) {
-            res.render('register', { errormsg: "Votre nom d'utilisateur est trop court !" });  
+            res.render('register', { errormsg: "Votre nom d'utilisateur est trop court !" });
         } else if(req.body.username.length > 25) {
             res.render('register', { errormsg: "Votre nom d'utilisateur est trop long !" });
         } else if(req.body.email == "" || mailformat.test(req.body.email) == false) {
@@ -20,22 +21,39 @@ class UserController {
             var newUser = new User({
                 username: req.body.username,
                 email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 10),
-            })
-            console.log(bcrypt.compareSync(req.body.password, newUser.password));
+                password: bcrypt.hashSync(req.body.password, 10)
+            });
         }
-        newUser.save().then(() => {
-            res.redirect('index').catch(() => { res.render('register', { errormsg: "Échec d'inscription." }) })
+        User.findOne({ username: req.body.username }, function(err, user) {
+            console.log(chalk.cyan("Nom d'utilisateur en cours de vérification..."));
+            if (err) {
+                return err;
+            }
+            if (user) {
+                console.log(chalk.red("Nom d'utilisateur déjà utilisé."));
+                res.render('register', { errormsg: "Ce nom d'utilisateur est déjà utilisé !" });
+            } else {
+                User.findOne({ email: req.body.email }, function(err, user) {
+                    console.log(chalk.cyan("Adresse email en cours de vérification..."));
+                    if (err) {
+                        return err;
+                    }
+                    if (user) {
+                        console.log(chalk.red("Adresse email déjà utilisée."));
+                        res.render('register', { errormsg: "Cette adresse email est déjà utilisée !" });
+                    } else {
+                        User.create(newUser, function(err, user) {
+                            if(err) {
+                                return err;
+                            } else {
+                                console.log(user);
+                                res.redirect('/index');
+                            }
+                        });
+                    }
+                });
+            }
         });
-    }
-    async list(req, res) {
-        try {
-            let user = await User.find({username: req.query.username}).exec()
-            res.json(user)
-        } catch (err) {
-            console.log(err);
-            res.json({ error: true })
-        }
     }
 }
 

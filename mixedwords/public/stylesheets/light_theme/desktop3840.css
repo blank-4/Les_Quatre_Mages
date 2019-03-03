@@ -67,7 +67,7 @@
     /* ----------------------------------------------- TROPHY ---------------------------------------------- */
     /* --------------------------------------------- HOME PAGE --------------------------------------------- */
     /* ------------------------------------------ LAYOUT & RULES  ------------------------------------------ */
-    nav > a {
+    nav > div:first-child {
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -81,7 +81,7 @@
         width: 70%;
         height: 100%;
     }
-    nav > div {
+    nav > div:last-child {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -89,7 +89,7 @@
         width: 20%;
         height: 100%;
     }
-    nav > a > img {
+    nav > div > img {
         width: 60px;
         height: 60px;
         margin-left: 2em;
@@ -116,6 +116,9 @@
         background-color: rgba(0, 0, 0, 0.6);
         border-radius: 20px;
         box-shadow: 0 0 20px -4px black;
+    }
+    .desktopRules > p {
+        padding: 0 1em;
     }
     .desktopContent > a {
         width: 160px;
