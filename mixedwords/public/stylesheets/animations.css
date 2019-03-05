@@ -70,8 +70,9 @@
 .desktop-scale-in-center {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     width: 20%;
-    height: 40%;
+    height: 45%;
     position: fixed;
     bottom: 4em;
     right: 0;

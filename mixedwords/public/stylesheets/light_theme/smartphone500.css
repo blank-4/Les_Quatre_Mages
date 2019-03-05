@@ -206,13 +206,6 @@
         height: 20px;
         width: 30px;
     }
-    .placementDrapeau {
-        margin-bottom: auto;
-        height: 30%;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-    }
     /* ----------------------------------------------- STYLE ----------------------------------------------- */
     /* -------------------------------------------- OPTION BUTTON ------------------------------------------ */
     .optionHome {
