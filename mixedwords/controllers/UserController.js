@@ -23,38 +23,38 @@ class UserController {
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10)
             });
+            User.findOne({ username: req.body.username }, function(err, user) {
+                console.log(chalk.cyan("Nom d'utilisateur en cours de vérification..."));
+                if (err) {
+                    return err;
+                }
+                if (user) {
+                    console.log(chalk.red("Nom d'utilisateur déjà utilisé."));
+                    res.render('register', { errormsg: "Ce nom d'utilisateur est déjà utilisé !" });
+                } else {
+                    User.findOne({ email: req.body.email }, function(err, user) {
+                        console.log(chalk.cyan("Adresse email en cours de vérification..."));
+                        if (err) {
+                            return err;
+                        }
+                        if (user) {
+                            console.log(chalk.red("Adresse email déjà utilisée."));
+                            res.render('register', { errormsg: "Cette adresse email est déjà utilisée !" });
+                        } else {
+                            User.create(newUser, function(err, user) {
+                                if(err) {
+                                    return err;
+                                } else {
+                                    console.log(user);
+                                    res.redirect('/index');
+                                }
+                            });
+                        }
+                    });
+                }
+            });
         }
-        User.findOne({ username: req.body.username }, function(err, user) {
-            console.log(chalk.cyan("Nom d'utilisateur en cours de vérification..."));
-            if (err) {
-                return err;
-            }
-            if (user) {
-                console.log(chalk.red("Nom d'utilisateur déjà utilisé."));
-                res.render('register', { errormsg: "Ce nom d'utilisateur est déjà utilisé !" });
-            } else {
-                User.findOne({ email: req.body.email }, function(err, user) {
-                    console.log(chalk.cyan("Adresse email en cours de vérification..."));
-                    if (err) {
-                        return err;
-                    }
-                    if (user) {
-                        console.log(chalk.red("Adresse email déjà utilisée."));
-                        res.render('register', { errormsg: "Cette adresse email est déjà utilisée !" });
-                    } else {
-                        User.create(newUser, function(err, user) {
-                            if(err) {
-                                return err;
-                            } else {
-                                console.log(user);
-                                res.redirect('/index');
-                            }
-                        });
-                    }
-                });
-            }
-        });
     }
 }
 
-module.exports = new UserController(); 
+module.exports = new UserController();
