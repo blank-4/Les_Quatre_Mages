@@ -6,6 +6,7 @@
     "start": "nodejs ./bin/www"
   },
   "dependencies": {
+    "alerts": "^0.1.3",
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
     "chalk": "^2.4.2",
@@ -18,7 +19,15 @@
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.3",
+    "react-alert": "^5.2.0",
+    "react-alert-template-oldschool-dark": "^1.0.1",
+    "react-dom": "^16.8.3",
+    "react-transition-group": "^2.6.0",
     "static-favicon": "~1.0.0",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^8.2.6",
     "vue": "^2.6.6",
     "vue-cookies": "^1.5.12"
   }
