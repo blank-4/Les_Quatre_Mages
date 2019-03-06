@@ -148,14 +148,15 @@
     }
     .divContent {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        height: 100%;
     }
     .divContent > img {
         height: 50px;
         width: 50px;
-        margin-bottom: 3%;
     }
     .switch {
         position: relative;
@@ -171,12 +172,11 @@
     .slider {
         position: absolute;
         cursor: pointer;
-        margin-bottom: 6%;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgb(255, 0, 0);
+        background-color: rgb(226, 226, 226);
         transition: .4s;
     }
     .slider:before {
@@ -190,7 +190,7 @@
         transition: .4s;
     }
     input:checked + .slider {
-        background-color: #00c732;
+        background-color: greenyellow;
     }
     input:focus + .slider {
         box-shadow: 0 0 1px #ffa230;
@@ -218,12 +218,11 @@
     .slider2 {
         position: absolute;
         cursor: pointer;
-        margin-bottom: 6%;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgb(95, 0, 107);
+        background-color: #8360dd;
         transition: .4s;
     }
     .slider2:before {
