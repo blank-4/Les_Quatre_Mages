@@ -63,3 +63,27 @@ block content
                 label(class="switch2")
                     input(type="checkbox" checked)
                     span(class="slider2 round2")
+        div(class="registerDropdown")
+            form(action="/register", method="POST")
+                label(for="usernameDrop") Nom d'utilisateur
+                input(id="usernameDrop", type="text", name="username")
+                label(for="emailDrop") Adresse email
+                input(id="emailDrop", type="email", name="email")
+                label(for="passwordDrop") Mot de passe
+                input(id="passwordDrop", type="password", name="password")
+                label(for="passwordConfirmationDrop") Confirmation du mot de passe
+                input(id="passwordConfirmationDrop", type="password", name="passwordConfirmation")
+                button(type="submit")
+                    img(src="images/light_theme/l_mwvalider.png", alt="Bouton valider")
+        div(class="loginDropdown")
+            form(action="/login", method="POST")
+                div
+                    label(for="usernameDrop2")
+                        img(src="images/avatar.png", alt="Image d'avatar")
+                    input(id="usernameDrop2", type="text", name="username", placeholder="Nom d'utilisateur")
+                div
+                    labellabel(for="passwordDrop2")
+                        img(src="images/lock.png", alt="Image d'un cadenas")
+                    input(type="passwordDrop2", name="password", placeholder="Mot de passe")
+                button(type="submit")
+                    img(src="images/light_theme/l_mwvalider.png", alt="Bouton valider")

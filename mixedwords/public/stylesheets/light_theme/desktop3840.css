@@ -63,8 +63,6 @@
         width: 100%;
         height: 10%;
     }
-    /* ----------------------------------------------- IMAGES ---------------------------------------------- */
-    /* ----------------------------------------------- TROPHY ---------------------------------------------- */
     /* --------------------------------------------- HOME PAGE --------------------------------------------- */
     /* ------------------------------------------ LAYOUT & RULES  ------------------------------------------ */
     nav > div:first-child {
@@ -94,7 +92,7 @@
         height: 60px;
         margin-left: 2em;
     }
-    nav > div > a {
+    nav > div > button {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -102,7 +100,7 @@
         height: 100%;
         transition: all 0.5s ease-in-out;
     }
-    nav > div > a:hover {
+    nav > div > button:hover {
         color: #ffa230;
         background-color: white;
     }
@@ -129,7 +127,7 @@
         height: 100%;
     }
     /* --------------------------------------------- HOME PAGE --------------------------------------------- */
-    /* ---------------------------------------------- MODALS ----------------------------------------------- */
+    /* ----------------------------------------------- MODALS ---------------------------------------------- */
     #desktopOption {
         display: none;
     }
@@ -253,6 +251,68 @@
     button > img {
         height: 20px;
         width: 30px;
+    }
+    /* --------------------------------------------- HOME PAGE --------------------------------------------- */
+    /* --------------------------------------------- DROPDOWNS --------------------------------------------- */
+    .registerDropdown {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        height: 40%;
+        position: fixed;
+        top: calc((-20%) + (-10vh));
+        right: 0;
+        background-color: #ffa230;
+        border-radius: 20px;
+        z-index: -1;
+    }
+    .loginDropdown {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        height: 40%;
+        position: fixed;
+        top: calc((-20%) + (-10vh));
+        right: 0;
+        background-color: #ffa230;
+        border-radius: 20px;
+        z-index: -1;
+    }
+    .registerDropdown > form, .loginDropdown > form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        height: 90%;
+    }
+    .loginDropdown > form > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+    .loginDropdown > form > div > label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+    }
+    .loginDropdown > form > div > label > img {
+        width: 100%;
+        height: 100%;
+    }
+    .registerDropdown > form > button, .loginDropdown > form > button {
+        width: 80px;
+        height: 40px;
+    }
+    .registerDropdown > form > button > img, .loginDropdown > form > button > img {
+        width: 100%;
+        height: 100%;
     }
     /* -------------------------------------------- LEADERBOARD -------------------------------------------- */
     /* -------------------------------------------- SCORE'S DIV -------------------------------------------- */

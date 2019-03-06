@@ -11,13 +11,13 @@ html
     script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
   body
     header
-    nav
+    nav(id="navapp")
       div
         img(class="navLogo", src="images/light_theme/l_mwlogo.png", alt="Logo du site")
       h1 MixedWords
       div
-        a(href="", @click="") Inscription
-        a(href="", @click="") Connexion
+        button(@click="desktopRegister()") Inscription
+        button(@click="desktopLogin()") Connexion
     main(id="app")
       block content
       button(class="optionHome", @click="desktopOption()")

@@ -1,5 +1,6 @@
 var vue = new Vue ({
     el: "#app",
+    el: "#navapp",
     data: () => {
         return {
 
@@ -33,6 +34,14 @@ var vue = new Vue ({
         // Permet de fermer la modal d'option ( desktop )
         closeDesktopOption: () => {
             closeOptionDesktop();
+        },
+        // Permet d'afficher le formulaire d'inscription ( desktop )
+        desktopRegister: () => {
+            dropRegister();
+        },
+        // Permet d'afficher le formulaire de connexion ( desktop )
+        desktopLogin: () => {
+            dropLogin();
         }
     }
 })
@@ -42,6 +51,8 @@ const playButton = document.getElementById("playModal");
 const optionButton = document.getElementById("optionModal");
 const gameRules = document.getElementById("gameRules");
 const desktopOption = document.getElementById("desktopOption");
+const registerDropdown = document.getElementsByClassName("registerDropdown");
+const loginDropdown = document.getElementsByClassName("loginDropdown");
 /* --------------------------------------------- FUNCTIONS --------------------------------------------- */
 /* ------------------------------------------ DOM MANIPULATION ----------------------------------------- */
 function openPlay() {
@@ -73,4 +84,10 @@ function optionDesktop() {
 function closeOptionDesktop() {
     desktopOption.classList.toggle('desktop-scale-out-center');
     desktopOption.classList.remove('desktop-scale-in-center');
+}
+function dropRegister() {
+    registerDropdown[0].classList.toggle('drop');
+}
+function dropLogin() {
+    loginDropdown[0].classList.toggle('drop');
 }
