@@ -1,6 +1,27 @@
-var vue = new Vue ({
-    el: "#app",
+/* ------------------------------------------- INSTANCE VUE -------------------------------------------- */
+/* ---------------------------------------------- NAVBAR ----------------------------------------------- */
+var secondVue = new Vue ({
     el: "#navapp",
+    data: () => {
+        return {
+
+        }
+    },
+    methods: {
+        // Permet d'afficher le formulaire d'inscription ( desktop )
+        desktopRegister: () => {
+            dropRegister();
+        },
+        // Permet d'afficher le formulaire de connexion ( desktop )
+        desktopLogin: () => {
+            dropLogin();
+        }
+    }
+})
+/* ------------------------------------------- INSTANCE VUE -------------------------------------------- */
+/* ----------------------------------------------- MAIN ------------------------------------------------ */
+var firstVue = new Vue ({
+    el: "#app",
     data: () => {
         return {
 
@@ -34,14 +55,6 @@ var vue = new Vue ({
         // Permet de fermer la modal d'option ( desktop )
         closeDesktopOption: () => {
             closeOptionDesktop();
-        },
-        // Permet d'afficher le formulaire d'inscription ( desktop )
-        desktopRegister: () => {
-            dropRegister();
-        },
-        // Permet d'afficher le formulaire de connexion ( desktop )
-        desktopLogin: () => {
-            dropLogin();
         }
     }
 })
