@@ -1,7 +1,29 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title=title
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/stylesheets/smartphone.css')
+    // link(rel='stylesheet', href='/stylesheets/tablet.css')
+    // link(rel='stylesheet', href='/stylesheets/laptop.css')
+    // link(rel='stylesheet', href='/stylesheets/desktop.css')
   body
+    nav
+      a(class="navbarButtons", href="")
+        img(src="/icons/homewhite.png", alt="Icône d'accueil")
+      a(class="navbarButtons", href="")
+        img(src="/icons/menuwhite.png", alt="Icône de menu")
+      ul
+        li
+          a(href="#")
+            img(src="/icons/off.png", alt="Icône de changement de thème")
+        li
+          a(href="#")
+            img(src="/icons/loginwhite.png", alt="Icône de connexion")
+        li  
+          a(href="#")
+            img(src="/icons/registerwhite.png", alt="Icône d'inscription")
+        li  
+          a(href="#")
+            img(src="/icons/leaderboardwhite.png", alt="Icône des scores")
     block content
