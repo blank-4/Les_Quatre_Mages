@@ -7,11 +7,12 @@ html
     // link(rel='stylesheet', href='/stylesheets/tablet.css')
     // link(rel='stylesheet', href='/stylesheets/laptop.css')
     // link(rel='stylesheet', href='/stylesheets/desktop.css')
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
   body
-    nav
+    nav(id="navbar")
       a(class="navbarButtons", href="")
         img(src="/icons/homewhite.png", alt="Icône d'accueil")
-      a(class="navbarButtons", href="")
+      a(class="navbarButtons", href="" @click.prevent="showSidebar()")
         img(src="/icons/menuwhite.png", alt="Icône de menu")
       ul
         li
@@ -27,3 +28,5 @@ html
           a(href="#")
             img(src="/icons/leaderboardwhite.png", alt="Icône des scores")
     block content
+  script(src="/javascripts/navbar.js")
+  footer
