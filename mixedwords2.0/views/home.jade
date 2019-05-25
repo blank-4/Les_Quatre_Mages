@@ -1,3 +1,17 @@
 extends layout
 
+block variables
+
+    - var HOMEPAGE = true
+
 block content
+    h1(class="siteTitle") MixedWords
+    p(class="homeRules") Règles basiques.
+        br
+        | Une grille constituée de lettres.
+        br
+        | Une liste de mots à trouver sera mise à disposition.
+        br
+        | Relier les lettres pour former un mot.
+    a(class="playButton", href="#")
+        img(src="/icons/play.png", alt="Bouton jouer")
