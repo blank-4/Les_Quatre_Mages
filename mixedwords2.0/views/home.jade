@@ -1,9 +1,5 @@
 extends layout
 
-block variables
-
-    - var HOMEPAGE = true
-
 block content
     h1(class="siteTitle") MixedWords
     p(class="homeRules") Règles basiques.
@@ -15,3 +11,4 @@ block content
         | Relier les lettres pour former un mot.
     a(class="playButton", href="#")
         img(src="/icons/play.png", alt="Bouton jouer")
+    div(class="scoresPreview")

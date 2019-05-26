@@ -5,5 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('home', { title: 'MixedWords - Accueil' });
 });
-
+router.get('/register', function(req, res, next) {
+  res.render('register', { title: 'MixedWords - Inscription' });
+});
 module.exports = router;
