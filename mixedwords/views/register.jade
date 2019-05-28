@@ -1,20 +1,23 @@
 extends layout
 
 block content
-    div(class="registerForm")
-        h2  Inscription
+    - var REGISTER = true
+    h2 Inscription
+    div(id="form", class="registerForm")
         form(action="/register", method="POST")
-            label(for="username") Nom d'utilisateur
-            input(id="username", type="text", name="username")
-            label(for="email") Adresse email
-            input(id="email", type="email", name="email")
-            label(for="password") Mot de passe
-            input(id="password", type="password", name="password")
-            label(for="passwordConfirmation") Confirmation du mot de passe
-            input(id="passwordConfirmation", type="password", name="passwordConfirmation")
-            button(type="submit", class="heartbeat")
-                img(src="images/light_theme/l_mwvalider.png", alt="Bouton valider")
-        if errormsg != "Inscription validée !"
-            p(class="registrationErrors", style="color: red") #{errormsg}
-        else
-            p(class="registrationErrors", style="color: greenyellow") #{errormsg}
+            p(v-if="error", class="errorMessage") {{ errorMessage }}
+            if ERROR
+                p(class="errorMessage") #{errormsg}
+            div
+                label(for="username") Nom d'utilisateur
+                input(id="username", type="text", name="username", v-model="username", required)
+            div
+                label(for="email") Adresse email
+                input(id="email", type="email", name="email", v-model="email",  required)
+            div
+                label(for="password") Mot de passe
+                input(id="password", type="password", name="password", v-model="password",  required)
+            div
+                label(for="passwordConfirmation") Mot de passe ( Confirmation )
+                input(id="passwordConfirmation", type="password", name="passwordConfirmation", v-model="passwordConfirmation",  required)
+            input(type="submit")

@@ -3,7 +3,7 @@ var UserController = require('../controllers/UserController.js');
 var router = express.Router();
 // Requête GET sur la page d'accueil
 router.get('/', function(req, res) {
-    res.render('index');
+    res.render('home');
 });
 // Requête GET sur la page des scores ( click sur le trophé )
 router.get('/leaderboard', function(req, res) {
@@ -26,8 +26,8 @@ router.get('/register', function(req, res) {
 // Requête POST sur la page d'inscription ( validation du formulaire d'inscription )
 router.post('/register', UserController.create);
 // Requête GET sur toutes les pages ( click sur le bouton home sur chaque page )
-router.get('/index', function(req, res) {
-    res.render('index');
+router.get('/home', function(req, res) {
+    res.render('home');
 });
 // Requête GET sur profil ( click sur l'avatar sur la page de jeu )
 router.get('/profile', function(req, res) {
