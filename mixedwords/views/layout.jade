@@ -1,36 +1,38 @@
 doctype html
 html
   head
-    meta(charset="utf-8")
+    title=title
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title= title
-    link(rel="stylesheet", href="stylesheets/style.css")
-    link(rel="stylesheet", href="stylesheets/light_theme/smartphone500.css")
-    link(rel="stylesheet", href="stylesheets/light_theme/desktop3840.css")
-    link(rel="stylesheet", href="stylesheets/animations.css")
+    link(rel='stylesheet', href='/stylesheets/smartphone.css')
+    // link(rel='stylesheet', href='/stylesheets/tablet.css')
+    // link(rel='stylesheet', href='/stylesheets/laptop.css')
+    // link(rel='stylesheet', href='/stylesheets/desktop.css')
     script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
   body
-    header
-    nav(id="navapp")
-      div
-        img(class="navLogo", src="images/light_theme/l_mwlogo.png", alt="Logo du site")
-      h1 MixedWords
-      div
-        button(@click="desktopRegister()") Inscription
-        button(@click="desktopLogin()") Connexion
-    main(id="app")
+    nav(id="navbar")
+      a(href="/")
+        img(src="/icons/homewhite.png", alt="Icône d'accueil")
+      a(href="#", @click.prevent="showSidebar()")
+        img(src="/icons/menuwhite.png", alt="Icône de menu")
+      ul
+        li
+          a(href="#")
+            img(src="/icons/off.png", alt="Icône on & off")
+        li
+          a(href="#")
+            img(src="/icons/loginwhite.png", alt="Icône de connexion")
+        li
+          a(href="/register")
+            img(src="/icons/registerwhite.png", alt="Icône d'inscription")
+        li
+          a(href="#")
+            img(src="/icons/leaderboardwhite.png", alt="Icône des scores")
+        li(class="mwSettings")
+          a(href="#")
+            img(src="/icons/settings.png", alt="Icône des paramètres")
+    main
       block content
-    img(value="1", class="mwLogo", src="images/light_theme/l_mwlogo.png", alt="Logo du site")
-    img(value="1", class="sunmoon sunmoonFloating", src="images/light_theme/sun.png", alt="Image d'un soleil")
-    img(value="1", class="cloud1 cloud1Floating", src="images/cloud.png", alt="Image d'un nuage")
-    img(value="1", class="cloud2 cloud2Floating", src="images/cloud.png", alt="Image d'un nuage")
-    img(value="1", class="cloud3 cloud3Floating", src="images/cloud.png", alt="Image d'un nuage")
-    img(value="2", class="wave1animation", src="images/light_theme/l_mwwave1.png", alt="Image d'une vague")
-    img(value="3", class="wave2animation", src="images/light_theme/l_mwwave2.png", alt="Image d'une vague")
-    button(class="optionHome", @click="desktopOption()")
-      img(src="images/gearing.png", alt="Bouton option desktop")
-    a(class="returnHome", href="/index")
-      img(src="images/home.png", alt="Retour à l'accueil")
     footer
-      p &copy Tous droits réservés.
-    script(src="javascripts/script.js")
+    if REGISTER
+      script(src="/javascripts/register.js")
+    script(src="/javascripts/navbar.js")
