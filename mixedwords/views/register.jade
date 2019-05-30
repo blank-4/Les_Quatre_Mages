@@ -3,11 +3,12 @@ extends layout
 block content
     - var REGISTER = true
     h2 Inscription
-    div(id="form", class="registerForm")
+    div(class="registerForm")
         form(action="/register", method="POST")
-            p(v-if="error", class="errorMessage") {{ errorMessage }}
-            if ERROR
+            if errormsg
                 p(class="errorMessage") #{errormsg}
+            if successmsg
+                p(class="errorMessage", style="background-color: #74D941 !important;") #{successmsg}
             div
                 label(for="username") Nom d'utilisateur
                 input(id="username", type="text", name="username", v-model="username", required)
@@ -20,4 +21,4 @@ block content
             div
                 label(for="passwordConfirmation") Mot de passe ( Confirmation )
                 input(id="passwordConfirmation", type="password", name="passwordConfirmation", v-model="passwordConfirmation",  required)
-            input(type="submit")
+            input(v-show="!error", type="submit" @keydown.enter.prevent)
