@@ -11,7 +11,10 @@ var LocalStrategy = require('passport-local').Strategy;
 var User = require('./models/UserModel');
 var session = require('express-session');
 
-var routes = require('./routes/index');
+var authRoutes = require('./routes/auth/index');
+var guestRoutes   = require('./routes/guest/index');
+
+
 
 var app = express();
 
@@ -28,9 +31,9 @@ app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-    extended: false
+    extended: true
 }));
-app.use(require('express-session')({ 
+app.use(session({ 
     secret: 'mixedwordssecret',
     resave: true,
     saveUninitialized: true
@@ -40,7 +43,8 @@ app.use(passport.session());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+app.use('/', authRoutes);
+app.use('/', guestRoutes);
 
 // Passport verifications
 passport.use('local', new LocalStrategy(function(username, password, done) {
@@ -68,9 +72,7 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(user, done) {
     done(null, user);
 });
-app.post('/login', passport.authenticate('local', { failureRedirect: '/index' }), function(req, res) {
-    res.render('gameconfig');
-});
+app.post('/login', passport.authenticate('local', { successRedirect: '/home', failureRedirect: '/connection' }));
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

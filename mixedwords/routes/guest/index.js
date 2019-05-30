@@ -1,9 +1,19 @@
 var express = require('express');
-var UserController = require('../controllers/UserController.js');
+var UserController = require('../../controllers/UserController.js');
+const passport = require('passport');
 var router = express.Router();
 // Requête GET sur la page d'accueil
 router.get('/', function(req, res) {
     res.render('home');
+});
+router.get('/profile', isLoggedIn, (req, res) => {
+    res.status(200).json(req.user);
+});
+router.get('/logout', isLoggedIn, (req, res) => {
+    req.logout();
+    res.status(200).json({
+        'message': 'successfully logout'
+    });
 });
 // Requête GET sur la page des scores ( click sur le trophé )
 router.get('/leaderboard', function(req, res) {
@@ -19,7 +29,11 @@ router.post('/game', function(req, res) {
         res.render('mixedwordsgrids/easycars');
     }
 });
-// Requête GET sur la page d'inscription ( click sur "créer un compte" )
+// Requête GET sur la page de connexion ( click sur "connexion" )
+router.get('/connection', function(req, res) {
+    res.render('connection');
+});
+// Requête GET sur la page d'inscription ( click sur "s'inscrire" )
 router.get('/register', function(req, res) {
     res.render('register');
 });
@@ -33,4 +47,13 @@ router.get('/home', function(req, res) {
 router.get('/profile', function(req, res) {
     res.render('profile');
 });
+
 module.exports = router;
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+    res.status(400).json({
+        'message': 'access denied'
+    });
+}

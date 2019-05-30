@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    - var LOGIN = true
+    h2(class="loginTitle") Connexion
+    div(class="loginForm")
+        form(action="/login", method="POST")
+            if failureRedirect
+                p(class="errorMessage") #{message}
+            div
+                label(for="username") Nom d'utilisateur
+                input(id="username", type="text", name="username", v-model="username", required)
+            div
+                label(for="password") Mot de passe
+                input(id="password", type="password", name="password", v-model="password",  required)
+            input(v-show="!error", type="submit" @keydown.enter.prevent)
