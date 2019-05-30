@@ -1,6 +1,7 @@
 var express = require('express');
 var UserController = require('../../controllers/UserController.js');
 var router = express.Router();
+var app = express();
 
 // Requêtes GET sur la page d'accueil
 router.get('/', function(req, res) {
@@ -10,13 +11,16 @@ router.get('/home', function(req, res) {
     res.render('home');
 });
 
-// Requête GET sur la page de jeu
-router.get('/gamesettings', function(req, res) {
+// Requête GET sur la page de jeu ( Accessible seulement si connecté )
+router.get('/gamesettings', isLoggedIn, function(req, res) {
     res.render('gamesettings');
 });
 
+//requête GET sur la page de connexion
 router.get('/connection', function(req, res) {
-    res.render('connection');
+    if(!req.user) {
+        res.render('connection', { userLogged: false });
+    }
 });
 
 
@@ -32,13 +36,10 @@ router.get('/profile', isLoggedIn, (req, res) => {
 
 router.get('/logout', isLoggedIn, (req, res) => {
     req.logout();
-    res.status(200).render('home', { isLoggedIn: false });
+    res.redirect('home');
 });
 
 router.post('/register', UserController.create);
-
-
-
 
 module.exports = router;
 
