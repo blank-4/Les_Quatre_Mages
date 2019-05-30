@@ -10,13 +10,9 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('./models/UserModel');
 var session = require('express-session');
-
 var authRoutes = require('./routes/auth/index');
-var guestRoutes   = require('./routes/guest/index');
-
-
-
 var app = express();
+
 
 // Database connection
 mongoose.connect("mongodb://127.0.0.1:27017/mixedwords", {
@@ -26,7 +22,6 @@ mongoose.connect("mongodb://127.0.0.1:27017/mixedwords", {
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -42,9 +37,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', authRoutes);
-app.use('/', guestRoutes);
 
 // Passport verifications
 passport.use('local', new LocalStrategy(function(username, password, done) {
@@ -73,6 +65,15 @@ passport.deserializeUser(function(user, done) {
     done(null, user);
 });
 app.post('/login', passport.authenticate('local', { successRedirect: '/home', failureRedirect: '/connection' }));
+
+app.use(function(req, res, next) {
+    res.locals.userLogs = req.user || null;
+    console.log(res.locals);
+    next();
+});
+
+app.use('/', authRoutes);
+
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
