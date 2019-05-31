@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    - var PROFILE = true
+    div(class="userHeader")
+        div(class="userAvatar")
+            a(href="#")
+                img(src="/icons/avatarwhite.png", alt="Avatar de joueur")
+        div(class="userStats")
+            p= userLogs.username
+            p(class="userLevel") Level 
+                if userLogs.level
+                    | #{userLogs.level}
+                else
+                    | ??
+            a(class="edit editUsername", href="#")
+                img(src="/icons/editwhite.png", alt="Icône éditer")
+    div(class="userBody")
