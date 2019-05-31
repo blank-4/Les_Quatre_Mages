@@ -21,10 +21,10 @@ html
         li
           if userLogs != null
             a(href="/logout")
-              img(src="/icons/logoutwhite.png", alt="Icône de connexion", title="Déconnexion.", class="logoutIcon")
+              img(src="/icons/logoutwhite.png", alt="Icône de connexion", title="Déconnexion", class="logoutIcon")
           else if userLogs == null
             a(href="/connection")
-              img(src="/icons/loginwhite.png", alt="Icône de connexion", title="Connexion.", class="loginIcon")
+              img(src="/icons/loginwhite.png", alt="Icône de connexion", title="Connexion", class="loginIcon")
         li
           a(href="/register")
             img(src="/icons/registerwhite.png", alt="Icône d'inscription")
@@ -32,12 +32,15 @@ html
           a(href="#")
             img(src="/icons/leaderboardwhite.png", alt="Icône des scores")
         li
-          a(href="/profile")
-            img(src="/icons/avatarwhite.png", alt="Icône de profil")
+          if userLogs != null
+            a(href="/profile")
+              img(src="/icons/avatarwhite.png", alt="Icône de profil")
         li(class="mwSettings")
           a(href="#")
             img(src="/icons/settings.png", alt="Icône des paramètres")
     main
+      video(id="backgroundVideo", autoplay, loop, muted)
+        source(src="/videos/animated.mp4", type="video/mp4")
       block content
     footer
     script(src="/javascripts/navbar.js")
