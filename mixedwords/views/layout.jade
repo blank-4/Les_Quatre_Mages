@@ -38,9 +38,11 @@ html
         li(class="mwSettings")
           a(href="#")
             img(src="/icons/settings.png", alt="Icône des paramètres")
-    main
+    main(id="update")
       video(id="backgroundVideo", autoplay, loop, muted)
         source(src="/videos/animated.mp4", type="video/mp4")
       block content
     footer
     script(src="/javascripts/navbar.js")
+    if PROFILE
+      script(src="/javascripts/profile.js")

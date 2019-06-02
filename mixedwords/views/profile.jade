@@ -13,6 +13,11 @@ block content
                     | #{userLogs.level}
                 else
                     | ??
-            a(class="edit editUsername", href="#")
+            a(class="edit editUsername", href="#", @click="showUserEditForm()")
                 img(src="/icons/editwhite.png", alt="Icône éditer")
     div(class="userBody")
+    div(class="userEditForm")
+        form(v-if="editUsername", action="/updateUser", method="POST")
+            h4 Changer de nom d'utilisateur
+            input(type="text", name="newUsername", required)
+            input(type="submit")

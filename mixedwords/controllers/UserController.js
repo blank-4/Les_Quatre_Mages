@@ -1,6 +1,6 @@
-var User = require('../models/UserModel');
-var bcrypt = require('bcryptjs');
-var chalk = require('chalk');
+const User = require('../models/UserModel');
+const bcrypt = require('bcryptjs');
+const chalk = require('chalk');
 
 class UserController {
     create(req, res) {
