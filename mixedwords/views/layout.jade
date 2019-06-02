@@ -26,10 +26,11 @@ html
             a(href="/connection")
               img(src="/icons/loginwhite.png", alt="Icône de connexion", title="Connexion", class="loginIcon")
         li
-          a(href="/register")
-            img(src="/icons/registerwhite.png", alt="Icône d'inscription")
+          if !userLogs
+            a(href="/register")
+              img(src="/icons/registerwhite.png", alt="Icône d'inscription")
         li
-          a(href="#")
+          a(href="/ladder")
             img(src="/icons/leaderboardwhite.png", alt="Icône des scores")
         li
           if userLogs != null
@@ -46,3 +47,5 @@ html
     script(src="/javascripts/navbar.js")
     if PROFILE
       script(src="/javascripts/profile.js")
+    if GAMESETTINGS
+      script(src="/javascripts/gamesettings.js")
