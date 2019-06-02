@@ -21,3 +21,5 @@ block content
             h4 Changer de nom d'utilisateur
             input(type="text", name="newUsername", required)
             input(type="submit")
+            button(class="closeButton", @click="closeUserEditForm()")
+                img(src="/icons/closewhite.png", alt="Icône fermer")

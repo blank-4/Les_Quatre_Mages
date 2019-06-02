@@ -43,6 +43,8 @@ router.get('/logout', isLoggedIn, (req, res) => {
 // Permet de récupérer les informations envoyées par l'utilisateur lors de la soumission d'un formulaire d'inscription via une requête POST.
 router.post('/register', UserController.create);
 
+// Permet de modifier son nom d'utilisateur après avoir vérifié si celui-ci est bien disponible.
+// Possible uniquement si on est connectés.
 router.post('/updateUser', isLoggedIn, function(req, res) {
     var loggedUser = res.locals.userLogs;
     User.findById(loggedUser._id, function(err, user) {
@@ -72,6 +74,34 @@ router.post('/updateUser', isLoggedIn, function(req, res) {
             return err;
         };
     });
+});
+
+// Sert la page des scores si on la demande via une requête GET.
+router.get('/ladder', function(req, res) {
+    User.find({}, function(err, users) {
+        if(err) {
+            return err;
+        }
+        if(users) {
+            console.log(users);
+            res.render('scores', { usersList: users });
+        }
+    });
+});
+
+// Sert la page de jeu en difficulté facile si on la demande via une requête GET.
+router.post('/easy', isLoggedIn, function(req, res) {
+    res.render('difficulty/easy');
+});
+
+// Sert la page de jeu en difficulté moyenne si on la demande via une requête GET.
+router.post('/medium', isLoggedIn, function(req, res) {
+    res.render('difficulty/medium');
+});
+
+// Sert la page de jeu en difficulté difficile si on la demande via une requête GET.
+router.post('/hard', isLoggedIn, function(req, res) {
+    res.render('difficulty/hard');
 });
 
 module.exports = router;

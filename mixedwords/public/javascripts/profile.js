@@ -9,6 +9,10 @@ var vue = new Vue({
         showUserEditForm: function() {
             this.editUsername = true;
             editFormFunction();
+        },
+        closeUserEditForm: function() {
+            this.editUsername = false;
+            !editFormFunction();
         }
     }
 });

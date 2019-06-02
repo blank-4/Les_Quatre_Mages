@@ -128,6 +128,22 @@ Success : #74D941
     position: fixed;
     z-index: -5;
   }
+  .closeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    border: none;
+    background-color: #D94F41;
+  }
+  .closeButton > img {
+    width: 90%;
+    height: 90%
+  }
   /* ------------------------------------------------------------------------------------------------------------------ */
   /* ------------------------------------------------------------------------------------------------------------------ */
   /* ----------------------------------------------- CSS PAGE D'ACCUEIL ----------------------------------------------- */
@@ -372,6 +388,170 @@ Success : #74D941
     width: 100px;
     height: 25px;
     margin: auto;
+    border: none;
+    border-radius: 6px;
+    color: #333333;
+    background-color: #FFF066;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ---------------------------------------------- CSS PAGE DES SCORES ----------------------------------------------- */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  div.scoresList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #333333;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+  }
+  div.scoresList > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 40px;
+  }
+  div.scoresList > div > p {
+    padding-left: 1em;
+  }
+  .userScore {
+    color: #FFF066;
+  }
+  .loggedUsername {
+    background-color: #FFF066;
+  }
+  .loggedUsername > p {
+    color: #333333;
+  }
+  .loggedUserScore {
+    color: #FF66EB;
+  }
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ----------------------------------------- CSS PAGE DE PARAMETRES DE JEU ------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  .gameSettings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .gameSettings > h2 {
+    margin: 1em auto;
+  }
+  .gameSettings > .difficultySelect {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 83px);
+    position: relative;
+  }
+  .fade {
+    animation: fade 2s ease-in-out;
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+    } 
+    to {
+      opacity: 1;
+    }
+  }
+  .slideLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: 1em;
+    border: 2px solid #FFF066;
+    border-radius: 50px;
+    background: none;
+    transition: all 0.6s ease-in-out;
+  }
+  .slideRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: calc(50% - 50px);
+    right: 1em;
+    border: 2px solid #FFF066;
+    border-radius: 50px;
+    background: none;
+    transition: all 0.6s ease-in-out;
+  }
+  .arrowLeft {
+    width: 0;
+    height: 0;
+    margin: auto 30% auto auto;
+    border-style: solid;
+    border-width: 0px 10px 14px 10px;
+    border-color: transparent transparent #FFF066 transparent;
+    transform: rotate(-90deg);
+    border-style: inset;
+    border-radius: 2px;
+  }
+  .arrowRight {
+    width: 0;
+    height: 0;
+    margin: auto auto auto 30%;
+    border-style: solid;
+    border-width: 0px 10px 14px 10px;
+    border-color: transparent transparent #FFF066 transparent;
+    transform: rotate(90deg);
+    border-style: inset;
+    border-radius: 2px;
+  }
+  .slideLeft:hover, .slideRight:hover {
+    background-color: #FFF066;
+  }
+  .slideLeft > div:hover, .slideRight > div:hover {
+    border-color: transparent transparent #333333 transparent;
+  }
+  .sliderDots {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50px;
+  }
+  .sliderDots > div {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #F2F2F2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  .difficultySelect > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 60%;
+    border-radius: 6px;
+    background-color: #333333;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  .difficultySelect > form > input[type="submit"] {
+    width: 100px;
+    height: 25px;
     border: none;
     border-radius: 6px;
     color: #333333;

@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    - var SCORES = true
+    h2 Scores
+    div(class="scoresList")
+        each user in usersList
+            if !userLogs
+                div
+                    p= user.username
+                        |  : 
+                        span(class="userScore")
+                            if user.scores
+                                | #{user.scores}
+                            else
+                                | ??
+            if userLogs
+                if user.username == userLogs.username
+                    div(class="loggedUsername")
+                        p= user.username
+                            |  : 
+                            span(class="loggedUserScore")
+                                if user.scores
+                                    | #{user.scores}
+                                else
+                                    | ??
+                else
+                    div
+                        p= user.username
+                            |  : 
+                            span(class="userScore")
+                                if user.scores
+                                    | #{user.scores}
+                                else
+                                    | ??
