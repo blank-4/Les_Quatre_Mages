@@ -320,4 +320,62 @@ Success : #74D941
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     background-color: #333333;
   }
+  .userEditForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    height: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    z-index: 10;
+    transition: all 0.5s ease-in-out;
+  }
+  .displayEditForm {
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+  }
+  .userEditForm > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 50%;
+    animation: popFromCenter 0.6s ease-in-out;
+  }
+  @keyframes popFromCenter {
+    0% {
+      opacity: 0;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .userEditForm > form > * {
+    margin: auto;
+    text-align: center;
+  }
+  .userEditForm > form > input {
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3) inset;
+    color: #333333;
+  }
+  .userEditForm > form > input[type="submit"] {
+    width: 100px;
+    height: 25px;
+    margin: auto;
+    border: none;
+    border-radius: 6px;
+    color: #333333;
+    background-color: #FFF066;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
 }

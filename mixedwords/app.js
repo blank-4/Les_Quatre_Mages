@@ -1,17 +1,17 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('static-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bcrypt = require('bcryptjs');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-var User = require('./models/UserModel');
-var session = require('express-session');
-var authRoutes = require('./routes/auth/index');
-var app = express();
+const express = require('express');
+const path = require('path');
+const favicon = require('static-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bcrypt = require('bcryptjs');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const User = require('./models/UserModel');
+const session = require('express-session');
+const authRoutes = require('./routes/auth/index');
+const app = express();
 
 
 // Database connection
@@ -68,7 +68,6 @@ app.post('/login', passport.authenticate('local', { successRedirect: '/home', fa
 
 app.use(function(req, res, next) {
     res.locals.userLogs = req.user || null;
-    console.log(res.locals);
     next();
 });
 
