@@ -9,17 +9,19 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('./models/UserModel');
+const flash = require('connect-flash');
 const session = require('express-session');
+const chalk = require('chalk');
 const authRoutes = require('./routes/auth/index');
 const app = express();
 
 
-// Database connection
+// Permet la connexion à la base de données.
 mongoose.connect("mongodb://127.0.0.1:27017/mixedwords", {
     useNewUrlParser: true
 });
 
-// view engine setup
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(favicon());
@@ -35,56 +37,79 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Passport verifications
+
+// Permet de mettre en place une stratégie permettant de vérifier les informations entrées lors de la connexion afin de s'assurer que les données entrées correspondent à un utilisateur enregistré.
 passport.use('local', new LocalStrategy(function(username, password, done) {
     User.findOne({ username: username }, function(err, user) {
-        if (err) {
+        if(err) {
             return done(err);
         }
-        if (!user) {
-            return done(null, false);
+        if(!user) {
+            return done(null, false, { message: "Nom d'utilisateur ou mot de passe incorrect" });
         }
-        if (password != user.password) {
+        if(password != user.password) {
             bcrypt.compare(password, user.password, function(err, res) {
                 if(res) {
                     return done(null, user);
                 } else {
-                    return done(null, false)
+                    return done(null, false, { message: "Nom d'utilisateur ou mot de passe incorrect" })
                 }
-            })
+            });
         }
     });
 }));
+
+
 passport.serializeUser(function(user, done) {
     done(null, user);
 });
+
+
 passport.deserializeUser(function(user, done) {
     done(null, user);
 });
-app.post('/login', passport.authenticate('local', { successRedirect: '/home', failureRedirect: '/connection' }));
+
+
+// Permet la redirection de l'utilisateur vers telle ou telle page selon s'il s'est connecté avec succès ou pas en servant de la stratégie mise en place plus haut.
+app.post('/login', function(req, res, next) {
+    passport.authenticate('local', function(err, user, info) {
+        if(err) {
+            return next(err);
+        }
+        if (!user) {
+            console.log(chalk.red("Échec de connexion utilisateur au serveur : " + user));
+            return res.render('connection', { errormsg: "Nom d'utilisateur ou mot de passe incorrect" });
+        }
+        req.logIn(user, function(err) {
+            if(err) { 
+                return next(err);
+            }
+            console.log(chalk.green("Utilisateur connecté : " + user.username));
+            return res.redirect('/');
+        });
+    })(req, res, next);
+});
 
 app.use(function(req, res, next) {
     res.locals.userLogs = req.user || null;
     next();
 });
 
+
 app.use('/', authRoutes);
 
 
-/// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
 
-/// error handlers
 
-// development error handler
-// will print stacktrace
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
@@ -95,8 +120,7 @@ if (app.get('env') === 'development') {
     });
 }
 
-// production error handler
-// no stacktraces leaked to user
+
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -107,5 +131,6 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
 
 app.listen(3000);

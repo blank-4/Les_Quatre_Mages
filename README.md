@@ -2,7 +2,7 @@
 
 ### Fonctionnalités
 - __L'utilisateur arrive sur la page d'accueil sur laquelle on a une explication du jeu. La page d'accueil devra contenir :__
-  - Un bouton menant au jeu ( Fait )
+  - <span style="color: greenyellow">Un bouton menant au jeu ( Fait )<span>
     - ( Bouton play dans la page d'accueil )
     - ( Le jeu est jouable seulement lorsque l'utilisateur est connecté )
   - Un bouton menant à la page des scores ( Fait )
@@ -15,7 +15,7 @@
     - ( Le bouton apparaît seulement si l'utilisateur est déconnecté )
   - Si l'utilisateur est connecté :
     - Un bouton menant à la page profil ( Fait )
-     - ( Bouton inscription dans le menu qui est une sidebar apparaissant à droite )
+     - ( Bouton profil dans le menu qui est une sidebar apparaissant à droite )
     - Un bouton menant à ses scores ( Fait )
      - ( Bouton scores dans le menu qui est une sidebar apparaissant à droite )
      - ( Tout les scores de tout le monde seront accessibles sur une seule et même page avec des onglets pour chaque difficulté. Si l'utilisateur est connecté, son score sera mis en valeur )
@@ -46,13 +46,20 @@
 
 
 - __La page des scores devra contenir :__
-  - Tout les scores dans toutes les difficultés
+  - Tout les scores dans toutes les difficultés ( Fait )
+    - ( Bouton score dans le menu qui est une sidebar apparaissant à droite )
   - Si l'utilisateur est connecté :
     - Un bouton menant à la page profil ( Fait )
-    - Un bouton menant à ses scores
+      - ( Bouton profil dans le menu qui est une sidebar apparaissant à droite )
+    - Un bouton menant à ses scores ( Fait )
+      - ( Onglet mes scores sur la page des scores )
     - Un bouton permettant de se déconnecter ( Fait )
+      - ( Bouton déconnexion dans le menu qui est une sidebar apparaissant à droite )
+      - ( Le bouton apparait seulement si l'utilisateur est connecté )
     - Mettre ses scores en valeur ( Fait )
+      - ( Les scores de l'utilisateur apparaissent sur fond jaune dans le tableau des scores )
   - Bonus : Filtrer les scores ( ex: du plus élevé au plus bas )
+    - ( Les scores apparaissent de façons décroissante grâce aux filtres mongodb )
 
 
 - __La page de connexion devra contenir :__
