@@ -7,6 +7,10 @@ const UserSchema = new Schema({
     username: String,
     email: String,
     password: String,
-})
+    easyScore: Number,
+    mediumScore: Number,
+    hardScore: Number,
+    userLevel: Number
+});
 
 module.exports = mongoose.model('User', UserSchema);

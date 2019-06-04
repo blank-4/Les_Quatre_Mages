@@ -225,7 +225,7 @@ Success : #74D941
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 35%;
+    height: 30%;
   }
   div.registerForm > form > div {
     display: flex;
@@ -401,25 +401,63 @@ Success : #74D941
   /* ------------------------------------------------------------------------------------------------------------------ */
   div.scoresList {
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     width: 90%;
     height: 80%;
     margin: auto;
+    position: relative;
     border-radius: 10px;
     background-color: #333333;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
   }
   div.scoresList > div {
     display: flex;
     align-items: center;
     width: 100%;
+    height: 40px;
+  }
+  div.scoresList > div > a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 1em;
+    font-size: 10px;
+    text-decoration: none;
+  }
+  .difficultyScores {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: calc(100% - 40px);
+    position: absolute;
+    top: 40px;
+    left: 0;
+    border-radius: 0px 0px 6px 6px;
+    background-color: #4D4D4D;
+    overflow-y: auto;
+  }
+  .difficultyScores > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
     min-height: 40px;
   }
-  div.scoresList > div > p {
+  .difficultyScores > div > p {
     padding-left: 1em;
+    font-size: 14px;
+  }
+  .scoresList div:nth-of-type(1) .difficultyScores {
+    z-index: 1;
+  }
+  .scoresList div:target a {
+    font-weight: bold;
+  }
+  .scoresList div:target .difficultyScores {
+    z-index: 1;
   }
   .userScore {
     color: #FFF066;
