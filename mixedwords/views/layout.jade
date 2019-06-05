@@ -8,6 +8,7 @@ html
     // link(rel='stylesheet', href='/stylesheets/laptop.css')
     // link(rel='stylesheet', href='/stylesheets/desktop.css')
     script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+    script(src="https://unpkg.com/sweetalert/dist/sweetalert.min.js")
   body
     nav(id="navbar")
       a(href="/")
@@ -30,6 +31,8 @@ html
         li(class="mwSettings")
           a(href="#")
             img(src="/icons/settings.png", alt="Icône des paramètres")
+        li
+          button(onclick="testSweetFunction()")
     main
       block content
     footer
