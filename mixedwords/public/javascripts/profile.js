@@ -2,17 +2,39 @@ var vue = new Vue({
     el: "#update",
     data: function() {
         return {
-            editUsername: false
+            editUsername: false,
+            editEmail: false,
+            editPassword: false
         }
     },
     methods: {
-        showUserEditForm: function() {
-            this.editUsername = true;
-            editFormFunction();
+        showUserEditForm: function(param) {
+            if(param == 'username') {
+                this.editUsername = true;
+                editFormFunction();
+            }
+            if(param == 'email') {
+                this.editEmail = true;
+                editFormFunction();
+            }
+            if(param == 'password') {
+                this.editPassword = true;
+                editFormFunction();
+            }
         },
-        closeUserEditForm: function() {
-            this.editUsername = false;
-            !editFormFunction();
+        closeUserEditForm: function(param) {
+            if(param == 'username') {
+                this.editUsername = false;
+                !editFormFunction();
+            }
+            if(param == 'email') {
+                this.editEmail = false;
+                !editFormFunction();
+            }
+            if(param == 'password') {
+                this.editPassword = false;
+                !editFormFunction();
+            }
         }
     }
 });

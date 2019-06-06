@@ -19,22 +19,23 @@ html
         li
           a(href="#")
             img(src="/icons/off.png", alt="Icône on & off")
-        li
-          if userLogs != null
+        if userLogs != null
+          li
             a(href="/logout")
               img(src="/icons/logoutwhite.png", alt="Icône de connexion", title="Déconnexion", class="logoutIcon")
-          else if userLogs == null
+        else if userLogs == null
+          li
             a(href="/connection")
               img(src="/icons/loginwhite.png", alt="Icône de connexion", title="Connexion", class="loginIcon")
-        li
-          if !userLogs
+        if !userLogs
+          li
             a(href="/register")
               img(src="/icons/registerwhite.png", alt="Icône d'inscription")
         li
           a(href="/ladder")
             img(src="/icons/leaderboardwhite.png", alt="Icône des scores")
-        li
-          if userLogs != null
+        if userLogs != null
+          li
             a(href="/profile")
               img(src="/icons/avatarwhite.png", alt="Icône de profil")
         li(class="mwSettings")

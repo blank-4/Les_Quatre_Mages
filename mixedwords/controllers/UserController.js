@@ -53,7 +53,7 @@ class UserController {
                                 } else {
                                     console.log(chalk.green("Nouvel utilisateur enregistré."));
                                     console.log(user);
-                                    res.render('register', { successmsg: "Inscription validée !" });
+                                    res.redirect('/connection');
                                 }
                             });
                         }

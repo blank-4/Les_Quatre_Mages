@@ -107,7 +107,7 @@ block content
                     each user in usersListEasySorted || usersListMediumSorted || usersListHardSorted
                         if user.username == userLogs.username
                             div(class="loggedUsername")
-                                p= user.username
+                                p= "[ Facile ] " + user.username
                                     |  : 
                                     span(class="loggedUserScore")
                                         if user.easyScore
@@ -115,7 +115,7 @@ block content
                                         else
                                             | ??
                             div(class="loggedUsername")
-                                p= user.username
+                                p= "[ Moyen ] " +  user.username
                                     |  : 
                                     span(class="loggedUserScore")
                                         if user.mediumScore
@@ -123,7 +123,7 @@ block content
                                         else
                                             | ??
                             div(class="loggedUsername")
-                                p= user.username
+                                p= "[ Difficile ] " +  user.username
                                     |  : 
                                     span(class="loggedUserScore")
                                         if user.hardScore
