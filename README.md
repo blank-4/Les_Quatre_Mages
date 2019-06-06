@@ -2,7 +2,7 @@
 
 ### Fonctionnalités
 - __L'utilisateur arrive sur la page d'accueil sur laquelle on a une explication du jeu. La page d'accueil devra contenir :__
-  - <span style="color: greenyellow">Un bouton menant au jeu ( Fait )<span>
+  - Un bouton menant au jeu ( Fait )
     - ( Bouton play dans la page d'accueil )
     - ( Le jeu est jouable seulement lorsque l'utilisateur est connecté )
   - Un bouton menant à la page des scores ( Fait )
@@ -15,13 +15,13 @@
     - ( Le bouton apparaît seulement si l'utilisateur est déconnecté )
   - Si l'utilisateur est connecté :
     - Un bouton menant à la page profil ( Fait )
-     - ( Bouton profil dans le menu qui est une sidebar apparaissant à droite )
+      - ( Bouton profil dans le menu qui est une sidebar apparaissant à droite )
     - Un bouton menant à ses scores ( Fait )
-     - ( Bouton scores dans le menu qui est une sidebar apparaissant à droite )
-     - ( Tout les scores de tout le monde seront accessibles sur une seule et même page avec des onglets pour chaque difficulté. Si l'utilisateur est connecté, son score sera mis en valeur )
+      - ( Bouton scores dans le menu qui est une sidebar apparaissant à droite )
+      - ( Tout les scores de tout le monde seront accessibles sur une seule et même page avec des onglets pour chaque difficulté. Si l'utilisateur est connecté, son score sera mis en valeur )
     - Un bouton permettant de se déconnecter ( Fait )
-     - ( Bouton déconnexion dans le menu qui est une sidebar apparaissant à droite )
-     - ( Le bouton apparait seulement si l'utilisateur est connecté )
+      - ( Bouton déconnexion dans le menu qui est une sidebar apparaissant à droite )
+      - ( Le bouton apparait seulement si l'utilisateur est connecté )
 
 
 - __Difficulté :__
@@ -69,7 +69,8 @@
   - Un bouton inscription ( Fait )
     - ( Lien vers la page d'inscription si l'utilisateur n'a pas de compte )
   - Si l'utilisateur s'est connecté avec succès, rediriger vers la page d'accueil ou de jeu ( Fait )
-  - Si la connexion a échoué, envoyer un message indiquant l'erreur, ou une alerte, etc..
+  - Si la connexion a échoué, envoyer un message indiquant l'erreur, ou une alerte, etc.. ( Fait )
+    - ( Message sur fond rouge apparaîtra sur la page de connexion pour signaler une erreur )
 
 
 - __La page d'inscription devra contenir :__

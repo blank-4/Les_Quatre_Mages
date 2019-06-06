@@ -168,13 +168,64 @@ Success : #74D941
     height: 50px;
     margin: auto;
   }
-  div.scoresPreview {
+  div.scoresTopThree {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 90%;
-    min-height: 20%;
+    min-height: 25%;
     margin: auto;
+    position: relative;
     border-radius: 10px;
     background-color: #333333;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  div.scoresTopThree > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+  }
+  div.scoresTopThree > div > a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 1em;
+    font-size: 10px;
+    text-decoration: none;
+  }
+  div.scoresTopThree > div > .difficultyScores {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: calc(100% - 40px);
+    position: absolute;
+    top: 40px;
+    left: 0;
+    border-radius: 0px 0px 6px 6px;
+    background-color: #4D4D4D;
+  }
+  div.scoresTopThree > div > .difficultyScores > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 40px;
+  }
+  div.scoresTopThree > div > .difficultyScores > div > p {
+    padding-left: 1em;
+    font-size: 14px;
+  }
+  .scoresTopThree div:nth-of-type(1) .difficultyScores {
+    z-index: 1;
+  }
+  .scoresTopThree div:target a {
+    font-weight: bold;
+  }
+  .scoresTopThree div:target .difficultyScores {
+    z-index: 1;
   }
   /* ------------------------------------------------------------------------------------------------------------------ */
   /* ------------------------------------------------------------------------------------------------------------------ */
@@ -323,18 +374,47 @@ Success : #74D941
     width: 100%;
     height: 100%;
   }
-  a.editUsername {
+  a.editInfos {
     position: absolute;
     top: 2px;
     right: 2px;
   }
   .userBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     width: 90%;
-    height: calc(100% - (50px + 3em));
+    height: calc(100% - (50px + 5em));
     margin: 0 auto auto auto;
     border-radius: 5px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     background-color: #333333;
+  }
+  .userBodyInfos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+  }
+  .userBodyInfos > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .loggedUserEmail {
+    position: relative;
+  }
+  .loggedUserEmail > a {
+    position: absolute;
+  }
+  .loggedUserPassword > a {
+    color: #FFF066;
   }
   .userEditForm {
     display: flex;
