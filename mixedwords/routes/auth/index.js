@@ -294,6 +294,16 @@ router.post('/hard', isLoggedIn, function(req, res) {
 });
 
 
+// Permet de changer de difficulté une fois une grille terminée
+router.post('/nextLevel', function(req, res) {
+    if(req.body.yes) {
+        res.redirect('/gamesettings');
+    } else {
+        res.redirect('/home');
+    }
+});
+
+
 module.exports = router;
 
 

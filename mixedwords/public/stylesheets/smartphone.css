@@ -144,6 +144,64 @@ Success : #74D941
     width: 90%;
     height: 90%
   }
+  .modalContainer {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+  }
+  .modalContainer > .modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 360px;
+    height: 240px;
+    border-radius: 10px;
+    background-color: #333333;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  .modal > div {
+    flex: 1;
+  }
+  .modal > .modalTitle, .modal > .modalInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .modal > .modalButtons {
+    width: 100%;
+  }
+  .modalButtons > form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .modalButtons > form > input {
+    width: 30%;
+    height: 40px;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  .modalButtons > form > input[value="Oui"] {
+    color: #333333;
+    background-color: #74D941;
+  }
+  .modalButtons > form > input[value="Non"] {
+    color: #333333;
+    background-color: #D94F41;
+  }
   /* ------------------------------------------------------------------------------------------------------------------ */
   /* ------------------------------------------------------------------------------------------------------------------ */
   /* ----------------------------------------------- CSS PAGE D'ACCUEIL ----------------------------------------------- */
@@ -577,7 +635,7 @@ Success : #74D941
     position: relative;
   }
   .fade {
-    animation: fade 2s ease-in-out;
+    animation: fade 0.8s ease-in-out;
   }
   @keyframes fade {
     from {
@@ -689,10 +747,24 @@ Success : #74D941
     height: 60%;
     margin: 1em auto auto auto;
   }
-  #gridContent > #grid {
+  #gridContent > .easyGrid {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
+    width: 100%;
+    height: 100%;
+  }
+  #gridContent > .mediumGrid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: 100%;
+    height: 100%;
+  }
+  #gridContent > .hardGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     width: 100%;
     height: 100%;
   }
@@ -709,6 +781,7 @@ Success : #74D941
   }
   #grid, .box {
     user-select: none;
+    -moz-user-select: none;
   }
   .highlightBox {
     background-color: #FFF066 !important;
@@ -732,10 +805,12 @@ Success : #74D941
     width: 90%;
     height: 60%;
     margin: auto;
+    padding: 1em;
     list-style: none;
     border-radius: 10px;
     background-color: #4D4D4D;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5) inset;
+    overflow-y: auto;
   }
   #listContainer > ul > li {
     display: flex;

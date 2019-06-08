@@ -13,9 +13,20 @@ Easy Grid Words :
 - Dunk
 - Set
 
+Medium Grid Words :
+
+- Avengers
+- Matrix
+- Hellboy
+- Creed
+- Divergente
+- Aquaman
+- Serenity
+- Blade
+- Downsizing
+- Solo
+
 */
-
-
 
 var grid = document.getElementById("grid");
 var box = document.getElementsByClassName("box");
@@ -100,6 +111,19 @@ for(var i = 0; i < box.length; i++) {
                 };
             }
             console.log(found + " / " + wordsToFind.length);
+            if(found == wordsToFind.length) {
+                var gridSuccess = true;
+                if(gridSuccess) {
+                    var modalContainer = document.getElementById("alertHandler");
+                    modalContainer.style.display = "flex";
+                    var modalTitle = document.getElementsByClassName("modalTitle");
+                    modalTitle[0].children[0].innerText = "Félicitations !";
+                    modalTitle[0].children[0].style.color = "#74D941";
+                    modalTitle[0].children[1].innerText = "Vous avez réussi la grille !";
+                    var modalInfo = document.getElementsByClassName("modalInfo");
+                    modalInfo[0].children[0].innerText = "Voulez-vous changer de difficulté ?";
+                }
+            }
         };
     });
 };

@@ -7,7 +7,6 @@ html
     // link(rel='stylesheet', href='/stylesheets/tablet.css')
     // link(rel='stylesheet', href='/stylesheets/laptop.css')
     // link(rel='stylesheet', href='/stylesheets/desktop.css')
-    link(rel="stylesheet", href="sweetalert2.min.css")
     script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
   body
     nav(id="navbar")
@@ -45,12 +44,20 @@ html
       video(id="backgroundVideo", autoplay, loop, muted)
         source(src="/videos/animated.mp4", type="video/mp4")
       block content
+    div(id="alertHandler", class="modalContainer fade")
+      div(class="modal fade")
+        div(class="modalTitle")
+          h2
+          p
+        div(class="modalInfo")
+          p
+        if GAMEEASY || GAMEMEDIUM || GAMEHARD
+          div(class="modalButtons")
+            form(action="/nextLevel", method="POST")
+              input(type="submit", value="Oui", name="yes")
+              input(type="submit", value="Non", name="no")
     footer
     script(src="/javascripts/navbar.js")
-    script(src="https://cdn.jsdelivr.net/npm/sweetalert2@8")
-    script(src="sweetalert2.all.min.js")
-    script(src="https://cdn.jsdelivr.net/npm/promise-polyfill")
-    script(src="sweetalert2.min.js")
     if PROFILE
       script(src="/javascripts/profile.js")
     if GAMESETTINGS
