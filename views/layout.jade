@@ -1,0 +1,66 @@
+doctype html
+html
+  head
+    title=title
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/stylesheets/smartphone.css')
+    // link(rel='stylesheet', href='/stylesheets/tablet.css')
+    // link(rel='stylesheet', href='/stylesheets/laptop.css')
+    // link(rel='stylesheet', href='/stylesheets/desktop.css')
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+  body
+    nav(id="navbar")
+      a(href="/")
+        img(src="/icons/homewhite.png", alt="Icône d'accueil")
+      a(href="#", @click.prevent="showSidebar()")
+        img(src="/icons/menuwhite.png", alt="Icône de menu")
+      ul
+        li
+          a(href="#")
+            img(src="/icons/off.png", alt="Icône on & off")
+        if userLogs != null
+          li
+            a(href="/logout")
+              img(src="/icons/logoutwhite.png", alt="Icône de connexion", title="Déconnexion", class="logoutIcon")
+        else if userLogs == null
+          li
+            a(href="/connection")
+              img(src="/icons/loginwhite.png", alt="Icône de connexion", title="Connexion", class="loginIcon")
+        if !userLogs
+          li
+            a(href="/register")
+              img(src="/icons/registerwhite.png", alt="Icône d'inscription")
+        li
+          a(href="/ladder")
+            img(src="/icons/leaderboardwhite.png", alt="Icône des scores")
+        if userLogs != null
+          li
+            a(href="/profile")
+              img(src="/icons/avatarwhite.png", alt="Icône de profil")
+        li(class="mwSettings")
+          a(href="#")
+            img(src="/icons/settings.png", alt="Icône des paramètres")
+    main(id="update")
+      video(id="backgroundVideo", autoplay, loop, muted)
+        source(src="/videos/animated.mp4", type="video/mp4")
+      block content
+    div(id="alertHandler", class="modalContainer fade")
+      div(class="modal fade")
+        div(class="modalTitle")
+          h2
+          p
+        div(class="modalInfo")
+          p
+        if GAMEEASY || GAMEMEDIUM || GAMEHARD
+          div(class="modalButtons")
+            form(action="/nextLevel", method="POST")
+              input(type="submit", value="Oui", name="yes")
+              input(type="submit", value="Non", name="no")
+    footer
+    script(src="/javascripts/navbar.js")
+    if PROFILE
+      script(src="/javascripts/profile.js")
+    if GAMESETTINGS
+      script(src="/javascripts/gamesettings.js")
+    if GAMEEASY || GAMEMEDIUM || GAMEHARD
+      script(src="/javascripts/game.js")
