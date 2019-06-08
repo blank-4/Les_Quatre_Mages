@@ -4,25 +4,25 @@
 
 Les technos et outils utilisés :
   - **Node.js**
-    - **Runtime JavaScript**
-    - **Moteur V8** ( By Chrome )
+    - **Runtime JavaScript**.
+    - **Moteur V8** ( By Chrome ).
   - **Express.js**
-    - Framework **Node.js**
-    - Permet le développement facilité d'applications basées sur des serveurs, donc souvent des sites webs dynamiques et non statiques
+    - Framework **Node.js**.
+    - Permet le développement facilité d'applications basées sur des serveurs, donc souvent des sites webs dynamiques et non statiques.
   - **Jade**
-    - Moteur de template souvent utilisé lors de développement d'applications server-sided
-    - Énormes avantages face à l'**HTML** de base
-      - Les balises **HTML** de base sont simplifiées
-      - L'utilisation de langages de développements tels que **PHP** ou **JavaScript** s'en retrouvent simplifiés
-        - ( Notamment lorsqu'il est question de modifier la vue ( donc la page ) à l'aide de ces langages )
+    - Moteur de template souvent utilisé lors de développement d'applications server-sided.
+    - Énormes avantages face à l'**HTML** de base.
+      - Les balises **HTML** de base sont simplifiées.
+      - L'utilisation de langages de développements tels que **PHP** ou **JavaScript** s'en retrouvent simplifiés.
+        - ( Notamment lorsqu'il est question de modifier la vue ( donc la page ) à l'aide de ces langages ).
   - **Vue.js**
-    - Framework **JavaScript**
-    - Permet de dynamiser un peu plus les informations sur les applications
-    - Permet de renvoyer des feedbacks instantanés en mettant à jour la page à l'aide de messages d'erreurs ou de popups
+    - Framework **JavaScript**.
+    - Permet de dynamiser un peu plus les informations sur les applications.
+    - Permet de renvoyer des feedbacks instantanés en mettant à jour la page à l'aide de messages d'erreurs ou de popups.
   - **JavaScript**
   - **CSS**
 
-Les modules nécessaires au fonctionne d'**Express.js** :
+Les modules nécessaires au fonctionnement d'**Express.js** :
   - **BodyParser**
   - **CookieParser**
   - **Debug**
@@ -40,12 +40,12 @@ Les modules importants :
     - Permet d'afficher les pages simplement comme le ferait un fichier avec extension **.html**
 
 Les modules dispensables :
-  - Chalk
-    - Permet de colorer les messages qui apparaissent dans la console
-      - Peut permettre d'y voir plus clair dans les logs en affichant les erreurs en rouge et les succès en vert dans la console par exemple
-  - SweetAlert2
-    - Permet d'afficher des alerts assez stylés lorsque l'on veut avertir un utilisateur pour une quelconque raison
-      - Ceci dit, nous n'avons pas réussi à le faire marcher tel que nous le souhaitions
+  - **Chalk**
+    - Permet de colorer les messages qui apparaissent dans la console.
+      - Peut permettre d'y voir plus clair dans les logs en affichant les erreurs en rouge et les succès en vert dans la console par exemple.
+  - **SweetAlert2**
+    - Permet d'afficher des alerts assez stylés lorsque l'on veut avertir un utilisateur pour une quelconque raison.
+      - Ceci dit, nous n'avons pas réussi à le faire marcher tel que nous le souhaitions.
 
 ### Documentation Utilisateur
 
