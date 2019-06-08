@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    - var GAMESETTINGS = true
+    div(id="gamesettings", class="gameSettings")
+        h2 Paramètres de jeu
+        div(class="difficultySelect")
+            form(action="/easy", method="POST", class="fade")
+                p(style="font-size: 2em;") Facile
+                p Grille : 8 x 8
+                input(type="submit")
+            div(class="sliderDots")
+                div(style="background-color: #FFF066")
+                div
+                div
+        div(class="difficultySelect")
+            form(action="/medium", method="POST", class="fade")
+                p(style="font-size: 2em;") Moyen
+                p Grille : 12 x 12
+                input(type="submit")
+            div(class="sliderDots")
+                div
+                div(style="background-color: #FFF066")
+                div
+        div(class="difficultySelect")
+            form(action="/hard", method="POST", class="fade")
+                p(style="font-size: 2em;") Difficile
+                p Grille : 16 x 16
+                input(type="submit")
+            div(class="sliderDots")
+                div
+                div
+                div(style="background-color: #FFF066")
+        button(class="slideLeft", @click="slideLeft()")
+            div(class="arrowLeft")
+        button(class="slideRight", @click="slideRight()")
+            div(class="arrowRight")
