@@ -29,15 +29,15 @@ Les modules nécessaires au fonctionnement d'**Express.js** :
 
 Les modules importants :
   - **Passport.js**
-    - Permet de gérer les sessions utilisateur ( Connexion, Déconnexion, Inscription )
+    - Permet de gérer les sessions utilisateur ( Connexion, Déconnexion, Inscription ).
   - **Bcrypt.js**
-    - Permet de hash les mots de passe utilisateur ( Les crypter ) afin de les rendre illisible
-    - Permet aussi de comparer les mots de passes entrés avec les mots de passe stockés en base de donnée pour voir s'ils correspondent ou pas
+    - Permet de hash les mots de passe utilisateur ( Les crypter ) afin de les rendre illisible.
+    - Permet aussi de comparer les mots de passes entrés avec les mots de passe stockés en base de donnée pour voir s'ils correspondent ou pas.
   - **Mongoose**
-    - Permet de gérer les connexion aux bases de données
+    - Permet de gérer les connexion aux bases de données.
   - **Jade / Pug**
-    - Au choix, c'est la même chose, seule la syntaxe diffère légèrement et **Pug** est vraisemblablement plus récent que **Jade**
-    - Permet d'afficher les pages simplement comme le ferait un fichier avec extension **.html**
+    - Au choix, c'est la même chose, seule la syntaxe diffère légèrement et **Pug** est vraisemblablement plus récent que **Jade**.
+    - Permet d'afficher les pages simplement comme le ferait un fichier avec extension **.html**.
 
 Les modules dispensables :
   - **Chalk**
@@ -91,7 +91,7 @@ Troisième étape :
   - Si un chargement infini a lieu, vérifiez bien qu'il n'y a pas d'erreur dans la console.
   - S'il n'y a pas d'erreur, vérifiez bien que la connexion à la base de donnée s'est bien passée.
     - Si la connexion à la base de donnée a échoué :
-      - Il se peut que votre installation de MongoDB s'est mal passée.
+      - Il se peut que votre installation de MongoDB se soit mal passée.
       - Il se peut que votre service MongoDB n'est tout simplement pas démarré.
 
 ### Sources
