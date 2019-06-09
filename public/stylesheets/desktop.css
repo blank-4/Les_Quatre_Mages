@@ -1,0 +1,936 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+/*
+Lesser Dark : #4D4D4D
+Dark : #333333
+Darker : #262626
+Darker White : #F2F2F2
+Call To Action : #FFF066
+Error : #D94F41
+Success : #74D941
+*/
+@media screen and (min-width: 1080px) and (max-width: 1920px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;
+    background-color: #4D4D4D;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin: auto;
+    color: #F2F2F2;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  a, p, label, input, li {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #F2F2F2;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  #rmn-plp-extension-wrapper {
+    display: none !important;
+  }
+  nav, footer {
+    width: 100%;
+    height: 50px;
+    background-color: #333333;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  nav > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 100%;
+  }
+  nav > a > img {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+  }
+  nav > ul {
+    width: 50px;
+    height: 50%;
+    position: fixed;
+    top: 70px;
+    right: -50px;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    background-color: #333333;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+  }
+  .slideFromRight {
+    right: 0px;
+  }
+  nav > ul > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+  }
+  nav > ul > li.mwSettings {
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+  }
+  nav > ul > li > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  nav > ul > li > a > img {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+  }
+  nav > ul > li:nth-child(2) > a > img.loginIcon {
+    margin: 10px 13px 10px 7px;
+  }
+  nav > ul > li:nth-child(2) > a > img.logoutIcon {
+    margin: 10px 8px 10px 11px;
+  }
+  nav > ul > li:last-child > a > img {
+    width: 30px;
+    height: 10px;
+    margin: auto;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 100px);
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  main > video {
+    width: 100;
+    height: 100%;
+    position: fixed;
+    z-index: -5;
+  }
+  .closeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    border: none;
+    background-color: #D94F41;
+  }
+  .closeButton > img {
+    width: 90%;
+    height: 90%
+  }
+  .modalContainer {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+  }
+  .modalContainer > .modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 360px;
+    height: 240px;
+    border-radius: 10px;
+    background-color: #333333;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  .modal > div {
+    flex: 1;
+  }
+  .modal > .modalTitle, .modal > .modalInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .modal > .modalButtons {
+    width: 100%;
+  }
+  .modalButtons > form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .modalButtons > form > input {
+    width: 30%;
+    height: 40px;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  .modalButtons > form > input[value="Oui"] {
+    color: #333333;
+    background-color: #74D941;
+  }
+  .modalButtons > form > input[value="Non"] {
+    color: #333333;
+    background-color: #D94F41;
+  }
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ----------------------------------------------- CSS PAGE D'ACCUEIL ----------------------------------------------- */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  main > a, main > p {
+    margin: auto;
+  }
+  p.homeRules {
+    padding: 0 50px;
+    text-align: center;
+  }
+  a.playButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+  }
+  a.playButton > img {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+  }
+  div.scoresTopThree {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 90%;
+    min-height: 25%;
+    margin: auto;
+    position: relative;
+    border-radius: 10px;
+    background-color: #333333;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  div.scoresTopThree > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+  }
+  div.scoresTopThree > div > a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 1em;
+    font-size: 10px;
+    text-decoration: none;
+  }
+  div.scoresTopThree > div > .difficultyScores {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: calc(100% - 40px);
+    position: absolute;
+    top: 40px;
+    left: 0;
+    border-radius: 0px 0px 6px 6px;
+    background-color: #4D4D4D;
+  }
+  div.scoresTopThree > div > .difficultyScores > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 40px;
+  }
+  div.scoresTopThree > div > .difficultyScores > div > p {
+    padding-left: 1em;
+    font-size: 14px;
+  }
+  .scoresTopThree div:nth-of-type(1) .difficultyScores {
+    z-index: 1;
+  }
+  .scoresTopThree div:target a {
+    font-weight: bold;
+  }
+  .scoresTopThree div:target .difficultyScores {
+    z-index: 1;
+  }
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* --------------------------------------- CSS PAGE D'INSCRIPTION & CONNEXION --------------------------------------- */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  h2.loginTitle {
+    margin: auto auto 2em auto;
+  }
+  div.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 50%;
+    margin: 0 auto auto auto;
+    border-radius: 10px;
+    background-color: #333333;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  .loginForm > p {
+    margin: 0.5em auto 0.5em auto;
+  }
+  .loginForm > p > a {
+    color: #FFF066;
+  }
+  div.registerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #333333;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  div.registerForm > form, div.loginForm > form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  div.loginForm > form > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+  }
+  div.registerForm > form > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+  }
+  div.registerForm > form > div > label, div.loginForm > form > div > label {
+    margin: auto auto 10px auto;
+  }
+  div.registerForm > form > div > input, div.loginForm > form > div > input {
+    width: 80%;
+    height: 20px;
+    margin: 0 auto auto auto;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    color: #333333;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5) inset;
+  }
+  p.errorMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 25px;
+    margin: auto;
+    border-radius: 6px;
+    font-size: 10px;
+    color: #F2F2F2;
+    background-color: #D94F41;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  div.registerForm > form > input[type="submit"], div.loginForm > form > input[type="submit"] {
+    width: 160px;
+    height: 25px;
+    margin: auto;
+    border: none;
+    border-radius: 6px;
+    color: #333333;
+    background-color: #FFF066;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ----------------------------------------------- CSS PAGE DE PROFIL ----------------------------------------------- */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  .userHeader {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 60px;
+    margin: 1em 1em auto 1em;
+    border: 2px solid #333333;
+    border-radius: 5px;
+  }
+  .userAvatar {
+    width: 50px;
+    height: 50px;
+    margin: auto auto auto 4px;
+  }
+  .userAvatar > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .userAvatar > a > img {
+    width: 100%;
+    height: 100%;
+  }
+  .userStats {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: calc(100% - 68px);
+    height: 50px;
+    margin: auto 4px auto 0;
+    position: relative;
+  }
+  .userLevel {
+    font-size: 10px;
+    color: #FFF066;
+  }
+  a.edit {
+    width: 12px;
+    height: 12px;
+  }
+  a.edit > img {
+    width: 100%;
+    height: 100%;
+  }
+  a.editInfos {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+  }
+  .userBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    height: calc(100% - (50px + 5em));
+    margin: 0 auto auto auto;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    background-color: #333333;
+  }
+  .userBodyInfos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+  }
+  .userBodyInfos > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .loggedUserEmail {
+    position: relative;
+  }
+  .loggedUserEmail > a {
+    position: absolute;
+  }
+  .loggedUserPassword > a {
+    color: #FFF066;
+  }
+  .userEditForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    height: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    z-index: 10;
+    transition: all 0.5s ease-in-out;
+  }
+  .displayEditForm {
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+  }
+  .userEditForm > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 50%;
+    animation: popFromCenter 0.6s ease-in-out;
+  }
+  @keyframes popFromCenter {
+    0% {
+      opacity: 0;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .userEditForm > form > * {
+    margin: auto;
+    text-align: center;
+  }
+  .userEditForm > form > input {
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5) inset;
+    color: #333333;
+  }
+  .userEditForm > form > input[type="submit"] {
+    width: 100px;
+    height: 25px;
+    margin: auto;
+    border: none;
+    border-radius: 6px;
+    color: #333333;
+    background-color: #FFF066;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ---------------------------------------------- CSS PAGE DES SCORES ----------------------------------------------- */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  div.scoresList {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    position: relative;
+    border-radius: 10px;
+    background-color: #333333;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  div.scoresList > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+  }
+  div.scoresList > div > a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 1em;
+    font-size: 10px;
+    text-decoration: none;
+  }
+  .difficultyScores {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: calc(100% - 40px);
+    position: absolute;
+    top: 40px;
+    left: 0;
+    border-radius: 0px 0px 6px 6px;
+    background-color: #4D4D4D;
+    overflow-y: auto;
+  }
+  .difficultyScores > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 40px;
+  }
+  .difficultyScores > div > p {
+    padding-left: 1em;
+    font-size: 14px;
+  }
+  .scoresList div:nth-of-type(1) .difficultyScores {
+    z-index: 1;
+  }
+  .scoresList div:target a {
+    font-weight: bold;
+  }
+  .scoresList div:target .difficultyScores {
+    z-index: 1;
+  }
+  .userScore {
+    color: #FFF066;
+  }
+  .loggedUsername {
+    background-color: #FFF066;
+  }
+  .loggedUsername > p {
+    color: #333333;
+  }
+  .loggedUserScore {
+    color: #FF66EB;
+  }
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ----------------------------------------- CSS PAGE DE PARAMETRES DE JEU ------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  .gameSettings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .gameSettings > h2 {
+    margin: 1em auto;
+  }
+  .gameSettings > .difficultySelect {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 83px);
+    position: relative;
+  }
+  .fade {
+    animation: fade 0.8s ease-in-out;
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+    } 
+    to {
+      opacity: 1;
+    }
+  }
+  .slideLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: 1em;
+    border: 2px solid #FFF066;
+    border-radius: 50px;
+    background: none;
+    transition: all 0.6s ease-in-out;
+  }
+  .slideRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: calc(50% - 50px);
+    right: 1em;
+    border: 2px solid #FFF066;
+    border-radius: 50px;
+    background: none;
+    transition: all 0.6s ease-in-out;
+  }
+  .arrowLeft {
+    width: 0;
+    height: 0;
+    margin: auto 30% auto auto;
+    border-style: solid;
+    border-width: 0px 10px 14px 10px;
+    border-color: transparent transparent #FFF066 transparent;
+    transform: rotate(-90deg);
+    border-style: inset;
+    border-radius: 2px;
+  }
+  .arrowRight {
+    width: 0;
+    height: 0;
+    margin: auto auto auto 30%;
+    border-style: solid;
+    border-width: 0px 10px 14px 10px;
+    border-color: transparent transparent #FFF066 transparent;
+    transform: rotate(90deg);
+    border-style: inset;
+    border-radius: 2px;
+  }
+  .slideLeft:hover, .slideRight:hover {
+    background-color: #FFF066;
+  }
+  .slideLeft > div:hover, .slideRight > div:hover {
+    border-color: transparent transparent #333333 transparent;
+  }
+  .sliderDots {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50px;
+  }
+  .sliderDots > div {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #F2F2F2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  .difficultySelect > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 60%;
+    border-radius: 6px;
+    background-color: #333333;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  .difficultySelect > form > input[type="submit"] {
+    width: 100px;
+    height: 25px;
+    border: none;
+    border-radius: 6px;
+    color: #333333;
+    background-color: #FFF066;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------ CSS PAGE DE JEU ------------------------------------------------- */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------------------------------------------------ */
+  #gridContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 60%;
+    margin: 1em auto auto auto;
+  }
+  #gridContent > .easyGrid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 100%;
+    height: 100%;
+  }
+  #gridContent > .mediumGrid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: 100%;
+    height: 100%;
+  }
+  #gridContent > .hardGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    width: 100%;
+    height: 100%;
+  }
+  #grid > .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2em;
+    font-family: Montserrat, sans-serif;
+    color: #333333;
+    border-radius: 4px;
+    background-color: #F2F2F2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  #grid, .box {
+    user-select: none;
+    -moz-user-select: none;
+  }
+  .highlightBox {
+    background-color: #FFF066 !important;
+  }
+  #listContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 30%;
+    margin: 0 auto 1em auto;
+    border-radius: 10px;
+    background-color: #333333;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  #listContainer > ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 90%;
+    height: 60%;
+    margin: auto;
+    padding: 1em;
+    list-style: none;
+    border-radius: 10px;
+    background-color: #4D4D4D;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5) inset;
+    overflow-y: auto;
+  }
+  #listContainer > ul > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: auto 0.4em;
+    font-size: 16px;
+    list-style: none;
+  }
+  #list > li.found {
+    color: #FFF066;
+    text-decoration: line-through;
+  }
+  #listContainer > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    height: 20%;
+    margin: auto;
+  }
+  .box.found-red {
+    background: #EA2C2C !important;
+    background: -webkit-linear-gradient(#EA2C2C 50%, #D62222 51%) !important;
+    background: -moz-linear-gradient(#EA2C2C 50%, #D62222 51%) !important;
+    background: -o-linear-gradient(#EA2C2C 50%, #D62222 51%) !important;
+    background: linear-gradient(#EA2C2C 50%, #D62222 51%) !important; 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EA2C2C', endColorstr='#D62222',GradientType=0 );
+    font-weight: bold !important;
+    color: #333333  !important;
+  }
+  .box.found-green {
+    background: #A1D54F !important;
+    background: -webkit-linear-gradient(#A1D54F 50%, #80C217 51%) !important;
+    background: -moz-linear-gradient(#A1D54F 50%, #80C217 51%) !important;
+    background: -o-linear-gradient(#A1D54F 50%, #80C217 51%) !important;
+    background: linear-gradient(#A1D54F 50%, #80C217 51%) !important; 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A1D54F', endColorstr='#80C217',GradientType=0 );
+    font-weight: bold !important;
+    color: #333333 !important;
+  }
+  .box.found-yellow {
+    background: #FFF94F !important;
+    background: -webkit-linear-gradient(#FFF94F 50%, #FFE500 51%) !important;
+    background: -moz-linear-gradient(#FFF94F 50%, #FFE500 51%) !important;
+    background: -o-linear-gradient(#FFF94F 50%, #FFE500 51%) !important;
+    background: linear-gradient(#FFF94F 50%, #FFE500 51%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF94F', endColorstr='#FFE500',GradientType=0 );
+    font-weight: bold !important;
+    color: #333333 !important;
+  }
+  .box.found-blue {
+    background: #71CEEF !important;
+    background: -webkit-linear-gradient(#71CEEF 50%, #21B4E2 51%) !important;
+    background: -moz-linear-gradient(#71CEEF 50%, #21B4E2 51%) !important;
+    background: -o-linear-gradient(#71CEEF 50%, #21B4E2 51%) !important;
+    background: linear-gradient(#71CEEF 50%, #21B4E2 51%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#71CEEF', endColorstr='#21B4E2',GradientType=0 );
+    font-weight: bold !important;
+    color: #333333 !important;
+  }
+  .box.found-purple {
+    background: #C928A9 !important;
+    background: -webkit-linear-gradient(#C928A9 49%, #B5177D 49%) !important;
+    background: -moz-linear-gradient(#C928A9 49%, #B5177D 49%) !important;
+    background: -o-linear-gradient(#C928A9 49%, #B5177D 49%) !important;
+    background: linear-gradient(#C928A9 49%, #B5177D 49%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#C928A9', endColorstr='#B5177D',GradientType=0 );
+    font-weight: bold !important;
+    color: #333333 !important;
+  }
+  .box.found-orange {
+    background: #FFAE00 !important;
+    background: -webkit-linear-gradient(#FFAE00 49%, #CA8A00 49%) !important;
+    background: -moz-linear-gradient(#FFAE00 49%, #CA8A00 49%) !important;
+    background: -o-linear-gradient(#FFAE00 49%, #CA8A00 49%) !important;
+    background: linear-gradient(#FFAE00 49%, #CA8A00 49%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFAE00', endColorstr='#CA8A00',GradientType=0 );
+    font-weight: bold !important;
+    color: #333333 !important;
+  }
+  .box.found-pink {
+    background: #FF86E7 !important;
+    background: -webkit-linear-gradient(#FF86E7 49%, #FF5FDF 49%) !important;
+    background: -moz-linear-gradient(#FF86E7 49%, #FF5FDF 49%) !important;
+    background: -o-linear-gradient(#FF86E7 49%, #FF5FDF 49%) !important;
+    background: linear-gradient(#FF86E7 49%, #FF5FDF 49%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF86E7', endColorstr='#FF5FDF',GradientType=0 );
+    font-weight: bold !important;
+    color: #333333 !important;
+  }
+  .box.found-darkblue {
+    background: #0077FF !important;
+    background: -webkit-linear-gradient(#0077FF 50%, #0054B4 51%) !important;
+    background: -moz-linear-gradient(#0077FF 50%, #0054B4 51%) !important;
+    background: -o-linear-gradient(#0077FF 50%, #0054B4 51%) !important;
+    background: linear-gradient(#0077FF 50%, #0054B4 51%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0077FF', endColorstr='#0054B4',GradientType=0 );
+    font-weight: bold !important;
+    color: #333333 !important;
+  }
+  .box.found-palegreen {
+    background: #DBFFA2 !important;
+    background: -webkit-linear-gradient(#DBFFA2 50%, #B1DF68 51%) !important;
+    background: -moz-linear-gradient(#DBFFA2 50%, #B1DF68 51%) !important;
+    background: -o-linear-gradient(#DBFFA2 50%, #B1DF68 51%) !important;
+    background: linear-gradient(#DBFFA2 50%, #B1DF68 51%) !important; 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DBFFA2', endColorstr='#B1DF68',GradientType=0 );
+    font-weight: bold !important;
+    color: #333333 !important;
+  }
+  .box.found-brown {
+    background: #8B4513 !important;
+    background: -webkit-linear-gradient(#8B4513 49%, #773B10 49%) !important;
+    background: -moz-linear-gradient(#8B4513 49%, #773B10 49%) !important;
+    background: -o-linear-gradient(#8B4513 49%, #773B10 49%) !important;
+    background: linear-gradient(#8B4513 49%, #773B10 49%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8B4513', endColorstr='#773B10',GradientType=0 );
+    font-weight: bold !important;
+    color: #333333 !important;
+  }
+}
